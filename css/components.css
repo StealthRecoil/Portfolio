@@ -90,6 +90,7 @@
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s, transform 0.3s;
+  display:block;
 }
 .project-card:hover { 
   border-color: rgba(0, 229, 255, 0.3); 

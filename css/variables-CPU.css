@@ -1,0 +1,32 @@
+/* ─── ROOT VARIABLES (Green Terminal Theme) ─────────────────── */
+:root {
+  /* Core surfaces */
+  --bg: #050807;              /* near-black green tint */
+  --surface: #0b1411;         /* dark panel green-black */
+  --border: rgba(34, 197, 94, 0.12);
+
+  /* Text */
+  --text: #e5fff1;            /* soft green-white text */
+  --muted: #7aa89a;           /* desaturated green-grey */
+
+  /* Accents */
+  --accent: #22c55e;          /* main terminal green */
+  --accent2: #10b981;         /* deeper emerald green */
+
+  /* Status colours */
+  --red: #ef4444;             /* error red (kept sharp for contrast) */
+  --green: #22c55e;           /* system OK green */
+
+  /* Typography */
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Syne', sans-serif;
+
+  /* Layout */
+  --sidebar: 72px;
+  --sidebar-open: 220px;
+  --container: 1000px;
+
+  /* UI polish */
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+}

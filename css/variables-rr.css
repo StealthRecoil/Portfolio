@@ -1,0 +1,32 @@
+/* ─── ROOT VARIABLES (Rolls-Royce Premium Purple / Rose-Gold Outline Theme) ─────────────────── */
+:root {
+  /* Core surfaces */
+  --bg: #14081f;              /* slightly richer purple */
+  --surface: #1a0c28;         /* elevated panel, still subtle */
+  --border: rgba(230, 183, 163, 0.18);  /* very soft rose-gold edge */
+
+  /* Text */
+  --text: #ffffff;
+  --muted: #cfc7d6;
+
+  /* Accents */
+  --accent: #ffffff;
+  --accent2: #e6b7a3;
+
+  /* Status colours */
+  --red: #ef4444;
+  --green: #22c55e;
+
+  /* Typography */
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Syne', sans-serif;
+
+  /* Layout */
+  --sidebar: 72px;
+  --sidebar-open: 220px;
+  --container: 1000px;
+
+  /* UI polish */
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}

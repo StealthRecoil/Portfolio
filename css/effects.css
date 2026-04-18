@@ -49,6 +49,19 @@ body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring {
 }
 #boot-terminal .dim { color: var(--muted); }
 #boot-terminal .acc { color: var(--accent); }
+#boot-terminal .err {
+  color: var(--red);
+  animation: errorFlash 0.6s ease-in-out;
+}
+
+@keyframes errorFlash {
+  0% { opacity: 1; transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
 .cursor-blink {
   display: inline-block;
   width: 8px; height: 1.1em;

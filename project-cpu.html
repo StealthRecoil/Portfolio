@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project | KGledhill</title>
+  <meta name="description" content="Project detail page template for KGledhill.com." />
+
+  <link rel="stylesheet" href="css/variables-CPU.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="cursor" class="custom-cursor"></div>
+  <div id="cursor-ring" class="custom-cursor"></div>
+
+  <div id="boot">
+    <div id="boot-terminal">
+      <div id="boot-lines"></div>
+      <span class="cursor-blink" id="boot-cursor"></span>
+    </div>
+  </div>
+  <nav id="sidebar" aria-label="Primary">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-mark">KG</div>
+      <span class="sidebar-logo-text">kgledhill.com</span>
+    </div>
+
+    <a class="nav-item" href="index.html">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+        </svg>
+      </span>
+      <span class="nav-label">Home</span>
+    </a>
+
+    <a class="nav-item active" href="#overview">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+        </svg>
+      </span>
+      <span class="nav-label">Overview</span>
+    </a>
+
+    <a class="nav-item" href="#challenge">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3l-8.47-14.14a2 2 0 00-3.42 0z" />
+        </svg>
+      </span>
+      <span class="nav-label">Challenge</span>
+    </a>
+
+    <a class="nav-item" href="#process">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        </svg>
+      </span>
+      <span class="nav-label">Process</span>
+    </a>
+
+    <a class="nav-item" href="#gallery">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <polyline points="21 15 16 10 5 21" />
+        </svg>
+      </span>
+      <span class="nav-label">Gallery</span>
+    </a>
+
+    <a class="nav-item" href="#outcome">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19l6-6 4 4 6-8" />
+          <path d="M4 13v6h6" />
+        </svg>
+      </span>
+      <span class="nav-label">Outcome</span>
+    </a>
+
+    <a class="nav-item" href="#contact">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+      </span>
+      <span class="nav-label">Contact</span>
+    </a>
+
+    <div class="nav-spacer"></div>
+
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      <div class="status-text">Available<br>Sep 2026</div>
+    </div>
+  </nav>
+
+  <main id="main" class="visible">
+    <section id="overview" class="section hero reveal visible" aria-label="Project overview">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="grid two">
+          <div class="hero-text">
+            <div class="section-label">Project // Lorem Ipsum</div>
+            <h1 class="hero-title">
+              Lorem <span class="accent">Ipsum</span>
+            </h1>
+            <p class="hero-subtitle">
+              Lorem ipsum dolor sit amet.<br />
+              Consectetur adipiscing elit.
+            </p>
+            <p class="hero-summary">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat.
+            </p>
+            <div class="hero-cta">
+              <a class="btn" href="index.html#projects">Back to projects</a>
+              <a class="btn btn-ghost" href="#process">Read more</a>
+            </div>
+            <div class="hero-links" aria-label="Project links">
+              <a class="link" href="#gallery">Gallery</a>
+              <a class="link" href="#outcome">Outcome</a>
+              <a class="link" href="#contact">Contact</a>
+            </div>
+          </div>
+
+          <aside class="panel classified">
+            <h3>Lorem Meta</h3>
+            <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="grid two compact">
+              <div>
+                <h4 class="mini-head">Role</h4>
+                <p>Lorem ipsum</p>
+              </div>
+              <div>
+                <h4 class="mini-head">Duration</h4>
+                <p>Lorem ipsum</p>
+              </div>
+              <div>
+                <h4 class="mini-head">Stack</h4>
+                <p>Lorem ipsum</p>
+              </div>
+              <div>
+                <h4 class="mini-head">Status</h4>
+                <p>Lorem ipsum</p>
+              </div>
+            </div>
+            <div style="margin-top: 16px;">
+              <span class="tag">Lorem</span>
+              <span class="tag">Ipsum</span>
+              <span class="tag">Dolor</span>
+              <span class="tag">Sit</span>
+            </div>
+            <div class="project-scanline"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenge" class="section alt reveal visible">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">01 // Challenge</div>
+          <h2 class="section-title">Problem statement</h2>
+        </div>
+        <div class="panel">
+          <h3>Lorem ipsum dolor sit amet</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet.
+          </p>
+          <p>
+            Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum
+            lacinia arcu eget nulla.
+          </p>
+          <div class="project-scanline"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section reveal visible">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">02 // Process</div>
+          <h2 class="section-title">Approach</h2>
+        </div>
+
+        <div class="grid three">
+          <article class="panel classified">
+            <h3>Lorem step one</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+            <div class="project-scanline"></div>
+          </article>
+
+          <article class="panel classified">
+            <h3>Lorem step two</h3>
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+            <div class="project-scanline"></div>
+          </article>
+
+          <article class="panel classified">
+            <h3>Lorem step three</h3>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <div class="project-scanline"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section alt reveal visible">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">03 // Media</div>
+          <h2 class="section-title">Gallery</h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card classified">
+            <h3>Lorem ipsum one</h3>
+            <span class="tag">Placeholder</span>
+            <span class="tag">Placeholder</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
+              error sit voluptatem accusantium doloremque laudantium.
+            </p>
+            <div class="project-scanline"></div>
+          </article>
+
+          <article class="project-card classified">
+            <h3>Lorem ipsum two</h3>
+            <span class="tag">Placeholder</span>
+            <span class="tag">Placeholder</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit.
+            </p>
+            <div class="project-scanline"></div>
+          </article>
+
+          <article class="project-card classified">
+            <h3>Lorem ipsum three</h3>
+            <span class="tag">Placeholder</span>
+            <span class="tag">Placeholder</span>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque porro quisquam est, qui dolorem ipsum
+              quia dolor sit amet.
+            </p>
+            <div class="project-scanline"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcome" class="section reveal visible">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">04 // Outcome</div>
+          <h2 class="section-title">Results</h2>
+        </div>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet
+              rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus.
+            </p>
+            <ul class="bullets" role="list">
+              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Consectetur adipiscing elit.</li>
+              <li>Sed do eiusmod tempor incididunt.</li>
+            </ul>
+            <div class="project-scanline"></div>
+          </div>
+
+          <div class="panel classified redacted">
+            <h3>Lorem ipsum</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="redact">Redacted lorem ipsum dolor
+                sit amet.</span>
+            </p>
+            <blockquote class="quote">
+              <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+              <footer class="muted tiny">— Lorem Ipsum</footer>
+            </blockquote>
+            <div class="project-scanline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt reveal visible">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">05 // Next</div>
+          <h2 class="section-title">More detail</h2>
+        </div>
+
+        <div class="grid two">
+          <div class="panel">
+            <h3>Links</h3>
+            <div class="contact-list">
+              <a class="contact-item" href="index.html#projects">
+                <span class="contact-label">Projects</span>
+                <span class="contact-value">Return</span>
+              </a>
+              <a class="contact-item" href="index.html#contact">
+                <span class="contact-label">Contact</span>
+                <span class="contact-value">Reach out</span>
+              </a>
+              <a class="contact-item" href="#">
+                <span class="contact-label">Document</span>
+                <span class="contact-value">Placeholder</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Notes</h3>
+            <form class="form" action="#" method="post">
+              <label>
+                <span class="label">Name</span>
+                <input type="text" name="name" placeholder="Lorem ipsum" required />
+              </label>
+              <label>
+                <span class="label">Email</span>
+                <input type="email" name="email" placeholder="lorem@ipsum.com" required />
+              </label>
+              <label>
+                <span class="label">Message</span>
+                <textarea name="message" rows="4" placeholder="Lorem ipsum dolor sit amet" required></textarea>
+              </label>
+              <button class="btn" type="submit">Send Message</button>
+            </form>
+            <div class="project-scanline"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© 2026 Kieran Gledhill. System Online.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="#overview">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── CURSOR SCRIPT (Desktop Only) ────────────────────────
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+
+    // Check if device supports hover (ignores mobile touch screens)
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      let mx = -100, my = -100, rx = -100, ry = -100;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      (function animCursor() {
+        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+        rx += (mx - rx) * 0.14; ry += (my - ry) * 0.14;
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+        requestAnimationFrame(animCursor);
+      })();
+    } else {
+      cursor.style.display = 'none';
+      ring.style.display = 'none';
+    }
+
+    // ── BOOT SEQUENCE ────────────────────────────────────────
+    const bootEl = document.getElementById('boot-lines');
+    const bootScreen = document.getElementById('boot');
+    const content = document.getElementById('main');
+
+    const lines = [
+  { text: 'Gledhill Systems >>> CPU_SIMULATION.v3', cls: 'dim', delay: 0 },
+  { text: 'Initialising execution environment...', cls: '', delay: 180 },
+  { text: 'Loading instruction set: CUSTOM ISA [OK]', cls: '', delay: 380 },
+  { text: 'Mounting architecture: LOGIC_WORLD_BUILD', cls: '', delay: 580 },
+  { text: 'Verifying clock cycle stability...', cls: '', delay: 780 },
+  { text: 'CACHE: 16KB SIMULATION BUFFER  [SYNCED]', cls: '', delay: 980 },
+  { text: '', cls: '', delay: 1100 },
+  { text: 'User authentication: KIERAN_GLEDHILL  [INVALID]', cls: 'err', delay: 1250 },
+  { text: 'NEW USER DETECTED >>>  Permission level: USER.SANDBOX', cls: '', delay: 2450 },
+  { text: '', cls: '', delay: 2600 },
+  { text: 'Compiling micro-operations...', cls: '', delay: 2750 },
+  { text: 'Pipeline status: STABLE', cls: '', delay: 2950 },
+  { text: 'Branch prediction unit: ONLINE', cls: '', delay: 3150 },
+  { text: '', cls: '', delay: 3300 },
+  { text: '>>> entering CPU_SIMULATION.v3 workspace...', cls: 'acc', delay: 3500 },
+];
+
+    let done = 0;
+    lines.forEach(line => {
+      setTimeout(() => {
+        const d = document.createElement('div');
+        d.className = line.cls;
+        d.textContent = line.text;
+        bootEl.appendChild(d);
+        done++;
+        if (done === lines.length) {
+          setTimeout(() => {
+            bootScreen.classList.add('fade-out');
+            content.classList.add('visible');
+            setTimeout(() => bootScreen.style.display = 'none', 700);
+
+            // Trigger reveals once boot is done
+            reveals.forEach(r => {
+              if (r.getBoundingClientRect().top < window.innerHeight) {
+                r.classList.add('visible');
+              }
+            });
+          }, 600);
+        }
+      }, line.delay);
+    });
+
+    // ── ACTIVE NAV USING INTERSECTION OBSERVER ───────────
+    const navItems = document.querySelectorAll('.nav-item');
+
+    const linkedSections = Array.from(navItems)
+      .map(item => document.querySelector(item.getAttribute('href')))
+      .filter(el => el !== null);
+
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+
+            const id = entry.target.getAttribute('id');
+
+            navItems.forEach(link => {
+              link.classList.remove('active');
+            });
+
+            const activeLink = document.querySelector(
+              `.nav-item[href="#${id}"]`
+            );
+
+            if (activeLink) {
+              activeLink.classList.add('active');
+            }
+
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.6
+      }
+    );
+
+    linkedSections.forEach(section => {
+      navObserver.observe(section);
+    });
+
+    // ── SCROLL REVEAL ────────────────────────────────────────
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => io.observe(r));
+  </script>
+</body>
+</html>
