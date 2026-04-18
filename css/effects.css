@@ -1,0 +1,240 @@
+/* ─── CUSTOM CURSOR ─────────────────────────────────────────── */
+#cursor {
+  position: fixed;
+  width: 10px; height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s, background 0.2s, width 0.2s, height 0.2s;
+  mix-blend-mode: screen;
+}
+#cursor-ring {
+  position: fixed;
+  width: 36px; height: 36px;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.18s ease, width 0.2s, height 0.2s, border-color 0.2s;
+}
+body:has(a:hover) #cursor, body:has(button:hover) #cursor { 
+  width: 20px; height: 20px; background: var(--accent2); 
+}
+body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring { 
+  width: 54px; height: 54px; border-color: rgba(124, 58, 237, 0.5); 
+}
+
+/* ─── BOOT SCREEN ───────────────────────────────────────────── */
+#boot {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999; /* Highest priority */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease;
+}
+#boot.fade-out { opacity: 0; pointer-events: none; }
+#boot-terminal {
+  font-family: var(--mono);
+  font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+  color: var(--green);
+  max-width: 600px;
+  width: 90%;
+  line-height: 1.9;
+}
+#boot-terminal .dim { color: var(--muted); }
+#boot-terminal .acc { color: var(--accent); }
+.cursor-blink {
+  display: inline-block;
+  width: 8px; height: 1.1em;
+  background: var(--green);
+  vertical-align: text-bottom;
+  animation: blink 0.9s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+
+
+
+/* ─── HERO ──────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.15), transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.1), transparent 40%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+}
+.hero-subtitle {
+  font-family: var(--mono);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.hero-summary {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 65ch;
+  margin-bottom: 32px;
+}
+.hero-cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.hero-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+/* ─── TIMELINE ──────────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 28px;
+  display: grid;
+  gap: 32px;
+  max-width: 800px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+}
+.tl-item { position: relative; }
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -27px; top: 4px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--muted);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.tl-item:hover::before {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+}
+.tl-item.highlight::before { border-color: var(--accent); background: var(--accent); }
+.tl-item.future { opacity: 0.6; }
+.tl-date {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.tl-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; }
+.tl-item p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; margin: 0;}
+
+/* Scanlines Effect inside cards */
+.project-scanline {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.15) 2px,
+    rgba(0, 0, 0, 0.15) 4px
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+.project-card:hover .project-scanline, 
+.panel:hover .project-scanline { opacity: 1; }
+
+.project-card h3, .project-card p, .project-card .project-links, .project-card .tag { position: relative; z-index: 2; }
+.project-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; }
+.project-card p { font-size: 0.95rem; color: var(--muted); margin: 16px 0; }
+.tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text);
+  margin: 0 4px 4px 0;
+}
+
+/* ─── ANIMATIONS ────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── CRT POWER-ON ANIMATION (SOLID) ───────────────── */
+
+#crt-open {
+  position: fixed;
+  inset: 0;
+
+  background: #000;   /* force true black */
+
+  z-index: 9999;
+
+  pointer-events: none;
+
+  transform-origin: center;
+
+  display: none;
+}
+
+#crt-open.active {
+  display: block;
+
+  animation:
+    crt-line 0.28s ease-out forwards,
+    crt-expand 0.42s ease-out 0.28s forwards;
+}
+
+/* Thin white flash line */
+
+@keyframes crt-line {
+  0% {
+    transform: scaleY(0);
+    background: #000;
+  }
+
+  40% {
+    transform: scaleY(0.02);
+    background: #fff;
+  }
+
+  100% {
+    transform: scaleY(0.02);
+    background: #000;
+  }
+}
+
+/* Screen opens from center */
+
+@keyframes crt-expand {
+  0% {
+    transform: scaleY(0.02);
+    background: #000;
+  }
+
+  100% {
+    transform: scaleY(1);
+    background: #000;
+  }
+}

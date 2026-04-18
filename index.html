@@ -7,9 +7,18 @@
   <title>Kieran Gledhill | Portfolio</title>
   <meta name="description"
     content="Kieran Gledhill, Computer Science undergraduate. Digital Innovation Intern at Rolls-Royce Motor Cars. Portfolio covering systems, software, data, and engineering projects." />
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
+
+
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -36,6 +45,12 @@
         </svg></span>
       <span class="nav-label">Home</span>
     </a>
+    <a class="nav-item" href="#timeline">
+      <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        </svg></span>
+      <span class="nav-label">Timeline</span>
+    </a>
     <a class="nav-item" href="#projects">
       <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <rect x="3" y="3" width="7" height="7" />
@@ -48,16 +63,12 @@
     <a class="nav-item" href="#skills">
       <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="3" />
-          <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+          <path
+            d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
         </svg></span>
       <span class="nav-label">Skills</span>
     </a>
-    <a class="nav-item" href="#timeline">
-      <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-        </svg></span>
-      <span class="nav-label">Timeline</span>
-    </a>
+    
     <a class="nav-item" href="#contact">
       <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -90,8 +101,9 @@
           <p class="hero-summary">
             I build systems that solve real problems.
 
-Most of my work sits somewhere between software, data, and automation. 
-I like understanding how things actually work, from the data layer to the user interface, and then making them faster, simpler, and more reliable.
+            Most of my work sits somewhere between software, data, and automation.
+            I like understanding how things actually work, from the data layer to the user interface, and then making
+            them faster, simpler, and more reliable.
           </p>
           <div class="hero-cta">
             <a class="btn" href="#projects">View projects</a>
@@ -115,9 +127,12 @@ I like understanding how things actually work, from the data layer to the user i
         <div class="grid two">
           <div class="panel">
             <h3>Profile</h3>
-            <p>I am a Computer Science student on track for a First-Class degree, currently completing a placement year in Digital Innovation.</p>
-            <p>Over the past year, I have built internal tools, automation systems, and dashboards used in day-to-day operations. 
-Most of my work has been under real constraints - limited access, legacy systems, and tight timelines - which taught me how to build practical solutions that actually hold up.</p>
+            <p>I am a Computer Science student on track for a First-Class degree, currently completing a placement year
+              in Digital Innovation.</p>
+            <p>Over the past year, I have built internal tools, automation systems, and dashboards used in day-to-day
+              operations.
+              Most of my work has been under real constraints - limited access, legacy systems, and tight timelines -
+              which taught me how to build practical solutions that actually hold up.</p>
           </div>
           <div class="panel">
             <h3>Working style</h3>
@@ -146,18 +161,20 @@ Most of my work has been under real constraints - limited access, legacy systems
           <article class="tl-item">
             <div class="tl-date">Before university</div>
             <h3>McDonald’s</h3>
-            <p>Worked in a fast-paced customer environment where mistakes were visible immediately. 
-Learned reliability, teamwork, and how to stay calm under pressure.</p>
+            <p>Worked in a fast-paced customer environment where mistakes were visible immediately.
+              Learned reliability, teamwork, and how to stay calm under pressure.</p>
           </article>
           <article class="tl-item">
             <div class="tl-date">University</div>
             <h3>BSc Computer Science</h3>
-            <p>Strengthened fundamentals across software, data, and systems. Focused on building from first principles.</p>
+            <p>Strengthened fundamentals across software, data, and systems. Focused on building from first principles.
+            </p>
           </article>
           <article class="tl-item highlight">
             <div class="tl-date">Placement year</div>
             <h3>Rolls-Royce Motor Cars</h3>
-            <p>Engineered and implemented end-to-end systems, and built dashboards used by operational teams to track performance and make daily decisions.</p>
+            <p>Engineered and implemented end-to-end systems, and built dashboards used by operational teams to track
+              performance and make daily decisions.</p>
           </article>
           <article class="tl-item future">
             <div class="tl-date">Next</div>
@@ -189,10 +206,14 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
             <div>
               <h4 class="mini-head">Outcomes</h4>
               <ul class="bullets" role="list">
-                <li>Co-developed an Oracle APEX real-time inventory tracking application using QR code scanning that tracks 2000+ production assets with 100+ concurrent users.</li>
-                <li>Built KPI dashboards and analytics using SQL, DAX, Power BI, Excel Power Query, and SAP BusinessObjects.</li>
-                <li>Developed a Python data pipeline analysing about 270,000 records with under 7 seconds processing time, without third-party libraries.</li>
-                <li>Built a UI automation prototype for a restricted Windows Forms system, with error recovery and routing.</li>
+                <li>Co-developed an Oracle APEX real-time inventory tracking application using QR code scanning that
+                  tracks 2000+ production assets with 100+ concurrent users.</li>
+                <li>Built KPI dashboards and analytics using SQL, DAX, Power BI, Excel Power Query, and SAP
+                  BusinessObjects.</li>
+                <li>Developed a Python data pipeline analysing about 270,000 records with under 7 seconds processing
+                  time, without third-party libraries.</li>
+                <li>Built a UI automation prototype for a restricted Windows Forms system, with error recovery and
+                  routing.</li>
               </ul>
             </div>
           </div>
@@ -211,7 +232,8 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
           <article class="project-card classified">
             <h3>Database Engine from Scratch</h3>
             <span class="tag">C#</span> <span class="tag">Custom Query Language</span>
-            <p>Built a database engine in C# with a CLI interface and a human-readable query language. Designed the parsing layer to ensure queries are expressive, deterministic, and maintainable.</p>
+            <p>Built a database engine in C# with a CLI interface and a human-readable query language. Designed the
+              parsing layer to ensure queries are expressive, deterministic, and maintainable.</p>
             <div class="project-links">
               <a class="link" href="#">Demo</a>
               <a class="link" href="#">Write-up</a>
@@ -222,7 +244,8 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
           <article class="project-card classified">
             <h3>CPU Built in Logic World</h3>
             <span class="tag">Systems Architecture</span> <span class="tag">Assembly</span>
-            <p>Built a CPU using hand-placed wiring and logic components. Implemented a practical instruction set (add, sub, branch, compare) and demonstrated real programs, including Fibonacci and RGB graphics.</p>
+            <p>Built a CPU using hand-placed wiring and logic components. Implemented a practical instruction set (add,
+              sub, branch, compare) and demonstrated real programs, including Fibonacci and RGB graphics.</p>
             <div class="project-links">
               <a class="link" href="#">Demo</a>
               <a class="link" href="#">Build notes</a>
@@ -233,7 +256,9 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
           <article class="project-card classified redacted">
             <h3>Plant-wide Asset Tracking System</h3>
             <span class="tag">Enterprise</span> <span class="tag">Confidential</span>
-            <p>Built a system for tracking assets across the assembly line, with real time analytics dashboards and QR code scanning heuristics. Due to confidentiality, <span class="redact">Specific operational logic is masked.</span></p>
+            <p>Built a system for tracking assets across the assembly line, with real time analytics dashboards and QR
+              code scanning heuristics. Due to confidentiality, <span class="redact">Specific operational logic is
+                masked.</span></p>
             <div class="project-links">
               <a class="link" href="#contact">Request a demo</a>
             </div>
@@ -292,11 +317,11 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
           <div class="panel">
             <h3>Details</h3>
             <div class="contact-list">
-              <a class="contact-item" href="mailto:you@example.com">
+              <a class="contact-item" href="mailto:Kierandgledhill@gmail.com">
                 <span class="contact-label">Email</span>
                 <span class="contact-value">Reach out directly</span>
               </a>
-              <a class="contact-item" href="#">
+              <a class="contact-item" href="https://www.linkedin.com/in/kierandgledhill/">
                 <span class="contact-label">LinkedIn</span>
                 <span class="contact-value">Connect</span>
               </a>
@@ -344,7 +369,7 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
     // ── CURSOR SCRIPT (Desktop Only) ────────────────────────
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
-    
+
     // Check if device supports hover (ignores mobile touch screens)
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       let mx = -100, my = -100, rx = -100, ry = -100;
@@ -392,7 +417,7 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
             bootScreen.classList.add('fade-out');
             content.classList.add('visible');
             setTimeout(() => bootScreen.style.display = 'none', 700);
-            
+
             // Trigger reveals once boot is done
             reveals.forEach(r => {
               if (r.getBoundingClientRect().top < window.innerHeight) {
@@ -404,44 +429,57 @@ Learned reliability, teamwork, and how to stay calm under pressure.</p>
       }, line.delay);
     });
 
-    // ── ACTIVE NAV ON SCROLL (Fixed & Bulletproof) ───────────
+    // ── ACTIVE NAV USING INTERSECTION OBSERVER ───────────
     const navItems = document.querySelectorAll('.nav-item');
-    
-    // Dynamically pull sections based on the nav links to ensure exact mapping
+
     const linkedSections = Array.from(navItems)
       .map(item => document.querySelector(item.getAttribute('href')))
       .filter(el => el !== null);
 
-    window.addEventListener('scroll', () => {
-      let currentId = 'hero'; // Default
-      const scrollPosition = window.scrollY + (window.innerHeight / 3);
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
 
-      linkedSections.forEach(sec => {
-        // Calculate the absolute top position of the section in the document
-        const sectionTop = sec.getBoundingClientRect().top + window.scrollY;
-        
-        // If we've scrolled past the top of the section, make it the current one
-        if (scrollPosition >= sectionTop) {
-          currentId = sec.getAttribute('id');
-        }
-      });
+            const id = entry.target.getAttribute('id');
 
-      navItems.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
-      });
-    }, { passive: true });
+            navItems.forEach(link => {
+              link.classList.remove('active');
+            });
+
+            const activeLink = document.querySelector(
+              `.nav-item[href="#${id}"]`
+            );
+
+            if (activeLink) {
+              activeLink.classList.add('active');
+            }
+
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.6
+      }
+    );
+
+    linkedSections.forEach(section => {
+      navObserver.observe(section);
+    });
 
     // ── SCROLL REVEAL ────────────────────────────────────────
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { 
-        if (e.isIntersecting) { 
-          e.target.classList.add('visible'); 
-          io.unobserve(e.target); 
-        } 
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
       });
     }, { threshold: 0.1 });
     reveals.forEach(r => io.observe(r));
   </script>
 </body>
+
 </html>

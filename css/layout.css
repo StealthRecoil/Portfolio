@@ -1,0 +1,171 @@
+/* ─── SIDEBAR NAV ───────────────────────────────────────────── */
+#sidebar {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: var(--sidebar);
+  background: rgba(13, 17, 23, 0.95);
+  border-right: 1px solid var(--border);
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 0;
+  transition: width 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+#sidebar:hover { width: var(--sidebar-open); }
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px 22px;
+  border-bottom: 1px solid var(--border);
+  width: 100%;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.sidebar-logo-mark {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #000;
+}
+.sidebar-logo-text {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0;
+  transition: opacity 0.2s 0.1s;
+}
+#sidebar:hover .sidebar-logo-text { opacity: 1; }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 13px 22px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+  position: relative;
+}
+.nav-item:hover { color: var(--text); background: rgba(255, 255, 255, 0.04); }
+.nav-item.active { color: var(--accent); background: rgba(0, 229, 255, 0.05); }
+.nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 3px; height: 60%;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+}
+.nav-icon {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+}
+.nav-icon svg { width: 18px; height: 18px; }
+.nav-label { opacity: 0; transition: opacity 0.15s 0.05s; }
+#sidebar:hover .nav-label { opacity: 1; }
+
+.nav-spacer { flex: 1; }
+
+.nav-status {
+  padding: 14px 22px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+}
+.status-dot {
+  width: 8px; height: 8px;
+  flex-shrink: 0;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 255, 136, 0.5); }
+  50% { box-shadow: 0 0 0 5px rgba(0, 255, 136, 0); }
+}
+.status-text {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.15s 0.05s;
+  line-height: 1.4;
+}
+#sidebar:hover .status-text { opacity: 1; }
+
+/* ─── MAIN CONTENT AREA ─────────────────────────────────────── */
+#main {
+  margin-left: var(--sidebar);
+  transition: margin-left 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0; /* Handled by boot script */
+}
+#main.visible { opacity: 1; }
+
+.container {
+  width: min(var(--container), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section { padding: 96px 0; }
+.section.alt {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), transparent);
+  border-block: 1px solid var(--border);
+}
+
+.section-head { margin-bottom: 48px; }
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────── */
+.site-footer {
+  margin-left: var(--sidebar);
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.2);
+  transition: margin-left 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#sidebar:hover ~ .site-footer { margin-left: var(--sidebar-open); }
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-links { display: flex; gap: 20px; font-family: var(--mono); font-size: 0.85rem; }
+.footer-links a { color: var(--muted); transition: color 0.2s; }
+.footer-links a:hover { color: var(--accent); }

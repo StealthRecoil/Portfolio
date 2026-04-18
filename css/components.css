@@ -1,0 +1,175 @@
+/* ─── COMPONENTS ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(124, 58, 237, 0.1));
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover {
+  border-color: rgba(255,255,255,0.3);
+}
+
+.link {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+.link:hover { color: var(--accent); }
+
+.grid { display: grid; gap: 24px; }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid.three { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid.two.compact { margin-top: 16px; gap: 16px; }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.panel h3 { margin: 0 0 12px; font-size: 1.25rem; font-weight: 700; }
+.panel p { color: var(--muted); margin-bottom: 12px; font-size: 0.95rem; }
+
+.list, .bullets {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+  display: grid;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.mini-head { margin: 0 0 8px; font-size: 0.95rem; letter-spacing: 0.02em; font-family: var(--mono); color: var(--text);}
+
+.quote {
+  margin: 20px 0 0;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 3px solid var(--accent);
+  background: rgba(0, 229, 255, 0.05);
+}
+.quote p { margin: 0; color: var(--text); font-style: italic; }
+.quote footer { margin-top: 8px; }
+
+/* ─── CLASSIFIED PROJECTS & PANELS ──────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.project-card:hover { 
+  border-color: rgba(0, 229, 255, 0.3); 
+  transform: translateY(-4px); 
+}
+
+/* Stamps */
+.classified::after {
+  content: 'UNCLASSIFIED';
+  position: absolute;
+  top: 16px; right: -35px;
+  background: var(--green);
+  color: #000;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 4px 40px;
+  transform: rotate(35deg);
+  transform-origin: center;
+  z-index: 10;
+}
+.classified.redacted::after {
+  content: 'CONFIDENTIAL';
+  background: var(--red);
+  color: #fff;
+}
+
+
+
+/* Redacted Text */
+.redact {
+  background: var(--muted);
+  color: transparent;
+  border-radius: 3px;
+  transition: background 0.3s, color 0.3s;
+  user-select: none;
+}
+.project-card:hover .redact { background: transparent; color: inherit; }
+
+.project-links { display: flex; gap: 16px; margin-top: auto; }
+
+/* ─── CONTACT FORM ──────────────────────────────────────────── */
+.contact-list { display: grid; gap: 12px; }
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.2s;
+}
+.contact-item:hover { border-color: var(--accent); }
+.contact-label { color: var(--muted); font-family: var(--mono); font-size: 0.85rem;}
+.contact-value { color: var(--text); font-weight: 600; font-size: 0.95rem;}
+
+.form { display: grid; gap: 16px; }
+.label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+input, textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
+}
+textarea { resize: vertical; }

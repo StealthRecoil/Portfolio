@@ -1,0 +1,33 @@
+/* ─── ROOT VARIABLES (Refined Purple Theme) ─────────────────── */
+:root {
+  /* Core surfaces */
+  --bg: #120826;              /* deep rich purple background */
+  --surface: #1a1036;         /* elevated panels/cards */
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* Text */
+  --text: #f1f5f9;            /* primary text */
+  --muted: #94a3b8;           /* secondary text */
+
+  /* Accents */
+  --accent: #38bdf8;          /* primary accent (modern cyan) */
+  --accent2: #a78bfa;         /* secondary accent (soft violet) */
+
+  /* Status colours */
+  --red: #f43f5e;
+  --green: #22c55e;
+
+  /* Typography */
+  --mono: 'JetBrains Mono', monospace;
+
+  --sans: 'Syne', sans-serif;
+
+  /* Layout */
+  --sidebar: 72px;
+  --sidebar-open: 220px;
+  --container: 1000px;
+
+  /* UI polish */
+  --radius: 14px;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
