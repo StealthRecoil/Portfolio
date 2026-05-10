@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +16,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
     rel="stylesheet">
+
 </head>
 
 <body>
@@ -29,6 +31,7 @@
       <span class="cursor-blink" id="boot-cursor"></span>
     </div>
   </div>
+
   <nav id="sidebar" aria-label="Primary">
     <div class="sidebar-logo">
       <div class="sidebar-logo-mark">KG</div>
@@ -116,23 +119,28 @@
   </nav>
 
   <main id="main" class="visible">
+
+    <!-- ═══════════════════════════════════════════════════════
+         OVERVIEW / HERO
+         ─ Added: cpu-showcase full-width image BELOW the grid
+         ═══════════════════════════════════════════════════════ -->
     <section id="overview" class="section hero reveal visible" aria-label="Project overview">
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="container hero-content">
         <div class="grid two">
           <div class="hero-text">
-            <div class="section-label">Project // Lorem Ipsum</div>
+            <div class="section-label">Project // CPU Project</div>
             <h1 class="hero-title">
-              Lorem <span class="accent">Ipsum</span>
+              8-Bit <span class="accent">Sequential Processor</span>
             </h1>
             <p class="hero-subtitle">
-              Lorem ipsum dolor sit amet.<br />
-              Consectetur adipiscing elit.
+              A Unique Simulated Processing Unit, Presented Calculating Fibonacci.<br />
+              Built from just wires, pegs and gates in Logic World.
             </p>
             <p class="hero-summary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-              ex ea commodo consequat.
+              This project is a custom-built 8-bit computational system designed entirely from first principles (literal
+              wires and gates). It demonstrates how arithmetic, memory, control logic, and clocking interact to execute
+              a program at the bit level.
             </p>
             <div class="hero-cta">
               <a class="btn" href="index.html#projects">Back to projects</a>
@@ -146,35 +154,50 @@
           </div>
 
           <aside class="panel classified">
-            <h3>Lorem Meta</h3>
-            <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Project Metadata</h3>
+            <p class="muted">
+              A custom 8-bit processor built entirely from first principles inside Logic World.
+            </p>
             <div class="grid two compact">
               <div>
                 <h4 class="mini-head">Role</h4>
-                <p>Lorem ipsum</p>
+                <p>Architecture, Design & Implementation</p>
               </div>
               <div>
                 <h4 class="mini-head">Duration</h4>
-                <p>Lorem ipsum</p>
+                <p>Ongoing Personal Project</p>
               </div>
               <div>
-                <h4 class="mini-head">Stack</h4>
-                <p>Lorem ipsum</p>
+                <h4 class="mini-head">Environment</h4>
+                <p>Logic World</p>
               </div>
               <div>
                 <h4 class="mini-head">Status</h4>
-                <p>Lorem ipsum</p>
+                <p>v1 Complete · v2 In Development</p>
               </div>
             </div>
             <div style="margin-top: 16px;">
-              <span class="tag">Lorem</span>
-              <span class="tag">Ipsum</span>
-              <span class="tag">Dolor</span>
-              <span class="tag">Sit</span>
+              <span class="tag">Computer Architecture</span>
+              <span class="tag">Digital Logic</span>
+              <span class="tag">Assembly</span>
+              <span class="tag">Systems Design</span>
             </div>
             <div class="project-scanline"></div>
           </aside>
         </div>
+
+        <figure class="cpu-showcase" aria-label="Full CPU build overview">
+          <img
+            src="TopView.gif"
+            alt="Full view of the 8-bit sequential processor inside Logic World, showing the complete wire and gate layout"
+            loading="eager"
+          />
+          <figcaption>
+            CPU_SIMULATION.v3 // Full Build Overview
+            <span>LOGIC_WORLD · 8-BIT · SEQUENTIAL</span>
+          </figcaption>
+        </figure>
+
       </div>
     </section>
 
@@ -185,58 +208,129 @@
           <h2 class="section-title">Problem statement</h2>
         </div>
         <div class="panel">
-          <h3>Lorem ipsum dolor sit amet</h3>
+          <h3>What the system is</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-            quis sem at nibh elementum imperdiet.
+            The System currently executes a Fibonacci sequence using a modular hardwired instruction chain.
+            Every component — from logic gates to execution control — was designed and implemented manually, without any
+            external references or templates.
+            <br><br>
+            Version 1 (v1) is fully functional and stable.<br><br>
+            Version 2 (v2) is under development and introduces a true instruction pipeline, indirect memory addressing,
+            branching, and advanced ALU functionality.
           </p>
           <p>
-            Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum
-            lacinia arcu eget nulla.
+            This was all implemented inside of Logic World, a sandbox game where you can build mechanical and digital
+            systems using wires, gates, and other components.
           </p>
           <div class="project-scanline"></div>
         </div>
       </div>
     </section>
 
+    <section class="section reveal visible">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label">02 // Motivation</div>
+          <h2 class="section-title">Why I built it</h2>
+        </div>
+
+        <div class="panel">
+          <p>
+            I wanted to understand how computers actually work underneath abstraction layers.
+            Not just how to write code for a processor, but how the processor itself executes instructions,
+            stores state, moves data, and synchronises operations.
+          </p>
+
+          <p>
+            Building a CPU from individual logic components forces you to think differently.
+            There is no compiler, framework, or operating system to hide mistakes.
+            Every signal transition, memory operation, and timing issue has to be designed intentionally.
+          </p>
+
+          <p>
+            The project started as a small experiment with binary addition and quickly evolved into a complete
+            sequential processor with memory, registers, control logic, and a functioning execution cycle.
+          </p>
+
+          <blockquote class="quote">
+            <p>
+              "At some point, I realised I had accidentally started building an actual computer."
+            </p>
+          </blockquote>
+
+          <div class="project-scanline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════
+         PROCESS
+         ─ Added: architecture diagram image above the spec grid
+         ═══════════════════════════════════════════════════════ -->
     <section id="process" class="section reveal visible">
       <div class="container">
         <div class="section-head">
           <div class="section-label">02 // Process</div>
-          <h2 class="section-title">Approach</h2>
+          <h2 class="section-title">System Specification (v1)</h2>
         </div>
+
+        <figure class="arch-figure" style="margin-bottom: 32px;" aria-label="v1 architecture diagram">
+          <img
+            src="Sketches.jpg"
+            alt="Block diagram showing the v1 CPU architecture: ALU, MDR, ACC, CU, RAM, BUS and clock connections"
+            loading="lazy"
+          />
+          <figcaption>FIG 1 — pre-v1 System Architecture · Von Neumann · Fibonacci Sequence Planning</figcaption>
+        </figure>
 
         <div class="grid three">
           <article class="panel classified">
-            <h3>Lorem step one</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
-            </p>
+            <h3>Architecture</h3>
+            <p>PROCESSOR_TYPE: Sequential Hardwired Computation</p>
+            <p>DATA_WIDTH: 8-bit</p>
+            <p>ADDRESS_WIDTH: 4-bit (16 bytes of memory)</p>
+            <p>BUS_ARCHITECTURE: Von Neumann (Single Shared instruction/data bus)</p>
+            <p>EXECUTION_MODE: Ripple-Controlled sequential execution</p>
+            <p>CLOCK_SYSTEM: Automatic with manual step override</p>
+            <p>ENVIRONMENT: Logic World</p>
             <div class="project-scanline"></div>
           </article>
 
           <article class="panel classified">
-            <h3>Lorem step two</h3>
-            <p>
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
+            <h3>Memory</h3>
+            <p>ADDRESSIBLE_RANGE: 16 Addresses</p>
+            <p>IMPLEMENTED_MEMORY(V1): 8 Bytes</p>
+            <p>MEMORY_TYPE: R/W RAM</p>
+            <p>ACCESS_METHOD: Direct Addressing</p>
             <div class="project-scanline"></div>
           </article>
 
           <article class="panel classified">
-            <h3>Lorem step three</h3>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            </p>
+            <h3>Control</h3>
+            <p>MDR: Operational</p>
+            <p>ACC: Operational</p>
+            <p>ALU: Operational - supports ADD</p>
+            <p>CU: Operational - hardwired sequential control logic</p>
+            <p>CLK: Operational, automatic with manual override</p>
+            <p>BUS: Operational</p>
+            <p>INPUT/OUTPUT: Output - Lightboard bit register visualisation</p>
+            <p>FLAGS: Overflow flag implemented</p>
+            <p>PIPELINE: NONE</p>
+            <p>BRANCHING: NONE</p>
+            <p>INDIRECT_ADDRESSING: NONE</p>
+            <p>PC: NONE</p>
+            <p>IR: NONE</p>
+            <p>INTERRUPTS: NONE</p>
             <div class="project-scanline"></div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════
+         GALLERY
+         ─ Added: card-media figure at top of each project-card
+         ═══════════════════════════════════════════════════════ -->
     <section id="gallery" class="section alt reveal visible">
       <div class="container">
         <div class="section-head">
@@ -245,38 +339,108 @@
         </div>
 
         <div class="projects-grid">
+
+          <!-- ── CARD 1: ALU ──────────────────────────────────────
+               Replace src with a close-up of the ALU subsystem.
+               Good shot: full 8-bit adder chain with carry visible.
+               ─────────────────────────────────────────────────── -->
           <article class="project-card classified">
-            <h3>Lorem ipsum one</h3>
-            <span class="tag">Placeholder</span>
-            <span class="tag">Placeholder</span>
+            <figure class="card-media">
+              <img
+                src="images/alu-design.png"
+                alt="Close-up of the 8-bit ALU in Logic World showing the full adder chain and carry propagation logic"
+                loading="lazy"
+              />
+              <span class="img-stamp">ALU · v1</span>
+            </figure>
+
+            <h3>ALU Design</h3>
+            <span class="tag">Arithmetic Logic</span>
+            <span class="tag">8-bit Addition</span>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus
-              error sit voluptatem accusantium doloremque laudantium.
+              The ALU was one of the first major subsystems implemented.
+              It currently supports addition operations using chained carry logic across the full 8-bit width.
             </p>
+
+            <p>
+              Early versions regularly failed due to incorrect carry propagation,
+              which made debugging surprisingly difficult because a single incorrect bit could corrupt the entire
+              result.
+            </p>
+
             <div class="project-scanline"></div>
           </article>
 
+          <!-- ── CARD 2: RAM ──────────────────────────────────────
+               Replace src with a shot of the RAM/register bank.
+               Good shot: LED output registers lit up with live data.
+               ─────────────────────────────────────────────────── -->
           <article class="project-card classified">
-            <h3>Lorem ipsum two</h3>
-            <span class="tag">Placeholder</span>
-            <span class="tag">Placeholder</span>
+            <figure class="card-media">
+              <img
+                src="images/ram-registers.png"
+                alt="RAM and register bank in Logic World with LED output display showing stored 8-bit values"
+                loading="lazy"
+              />
+              <span class="img-stamp">RAM · 8B</span>
+            </figure>
+
+            <h3>RAM and Registers</h3>
+            <span class="tag">Memory</span>
+            <span class="tag">8-bit Storage</span>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit.
+              The RAM and registers were designed to provide fast access to frequently used data.
+              They support direct addressing and are implemented as R/W RAM with a capacity of 8 bytes (12 addressable
+              memory locations in v1, increasing to 1028 in v2).
+              Specially designed registers such as ripples, W or R only memory locations, and output registers hooked
+              up to LEDs were implemented.
             </p>
+
+            <p>
+              All buses were bi-directional, so tracing an incorrect signal required checking every
+              connected component for potential faults.
+            </p>
+
             <div class="project-scanline"></div>
           </article>
 
+          <!-- ── CARD 3: FIBONACCI ───────────────────────────────
+               Replace src with the Fibonacci output in action.
+               Best shot: LED lightboard mid-sequence showing a
+               Fibonacci number in binary — ideally a distinctive one
+               like 0b00010001 (17) or 0b00101101 (45).
+               ─────────────────────────────────────────────────── -->
           <article class="project-card classified">
-            <h3>Lorem ipsum three</h3>
-            <span class="tag">Placeholder</span>
-            <span class="tag">Placeholder</span>
+            <figure class="card-media">
+              <img
+                src="images/fibonacci-execution.png"
+                alt="LED output lightboard displaying a Fibonacci number in binary during live execution of the program"
+                loading="lazy"
+              />
+              <span class="img-stamp">EXEC · FIB</span>
+            </figure>
+
+            <h3>Fibonacci Execution</h3>
+            <span class="tag">Bit-Level Programming</span>
+            <span class="tag">Custom Microcode</span>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque porro quisquam est, qui dolorem ipsum
-              quia dolor sit amet.
+              The Fibonacci sequence was chosen as a demonstration program because it requires both arithmetic and
+              memory operations, making it a good test of the system's capabilities.
+              The program is implemented as a hardwired sequence of control signals that manipulate the ALU, registers,
+              and memory to calculate Fibonacci numbers iteratively.
             </p>
+
+            <p>
+              The initial program was actually designed using pen and paper, following messy hand drawn schematics and a
+              myriad of unorganised carry bits to ensure that each step was correct.
+            </p>
+
             <div class="project-scanline"></div>
           </article>
+
         </div>
       </div>
     </section>
@@ -290,17 +454,27 @@
 
         <div class="grid two">
           <div class="panel">
-            <h3>Lorem ipsum</h3>
+            <h3>What the project demonstrated</h3>
+
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet
-              rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus.
+              This project massively improved my understanding of computer architecture and low-level system design.
+              Concepts that normally feel abstract — such as registers, buses, clock cycles, instruction execution —
+              began to actually feel intuitive and tangible after designing them from the ground up.
+              This demistified a lot of the complex ideas and turned them into practical engineering problems.
             </p>
+
+            <p>
+              It also changed how I think about software.
+              Building even simple functionality at the hardware level gives a much better appreciation for abstraction,
+              efficiency, and system constraints.
+            </p>
+
             <ul class="bullets" role="list">
-              <li>Lorem ipsum dolor sit amet.</li>
-              <li>Consectetur adipiscing elit.</li>
-              <li>Sed do eiusmod tempor incididunt.</li>
+              <li>Designed and implemented a working sequential processor architecture.</li>
+              <li>Built modular memory, ALU, and control subsystems from logic components.</li>
+              <li>Executed real computational programs including Fibonacci generation.</li>
+              <li>Developed debugging and testing strategies for low-level logic systems.</li>
             </ul>
-            <div class="project-scanline"></div>
           </div>
 
           <div class="panel classified redacted">
@@ -310,7 +484,7 @@
                 sit amet.</span>
             </p>
             <blockquote class="quote">
-              <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
               <footer class="muted tiny">— Lorem Ipsum</footer>
             </blockquote>
             <div class="project-scanline"></div>
@@ -385,7 +559,6 @@
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
 
-    // Check if device supports hover (ignores mobile touch screens)
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       let mx = -100, my = -100, rx = -100, ry = -100;
       document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
@@ -406,22 +579,22 @@
     const content = document.getElementById('main');
 
     const lines = [
-  { text: 'Gledhill Systems >>> CPU_SIMULATION.v3', cls: 'dim', delay: 0 },
-  { text: 'Initialising execution environment...', cls: '', delay: 180 },
-  { text: 'Loading instruction set: CUSTOM ISA [OK]', cls: '', delay: 380 },
-  { text: 'Mounting architecture: LOGIC_WORLD_BUILD', cls: '', delay: 580 },
-  { text: 'Verifying clock cycle stability...', cls: '', delay: 780 },
-  { text: 'CACHE: 16KB SIMULATION BUFFER  [SYNCED]', cls: '', delay: 980 },
-  { text: '', cls: '', delay: 1100 },
-  { text: 'User authentication: KIERAN_GLEDHILL  [INVALID]', cls: 'err', delay: 1250 },
-  { text: 'NEW USER DETECTED >>>  Permission level: USER.SANDBOX', cls: '', delay: 2450 },
-  { text: '', cls: '', delay: 2600 },
-  { text: 'Compiling micro-operations...', cls: '', delay: 2750 },
-  { text: 'Pipeline status: STABLE', cls: '', delay: 2950 },
-  { text: 'Branch prediction unit: ONLINE', cls: '', delay: 3150 },
-  { text: '', cls: '', delay: 3300 },
-  { text: '>>> entering CPU_SIMULATION.v3 workspace...', cls: 'acc', delay: 3500 },
-];
+      { text: 'Gledhill Systems >>> CPU_SIMULATION.v3', cls: 'dim', delay: 0 },
+      { text: 'Initialising execution environment...', cls: '', delay: 180 },
+      { text: 'Loading instruction set: CUSTOM ISA [OK]', cls: '', delay: 380 },
+      { text: 'Mounting architecture: LOGIC_WORLD_BUILD', cls: '', delay: 580 },
+      { text: 'Verifying clock cycle stability...', cls: '', delay: 780 },
+      { text: 'CACHE: 16KB SIMULATION BUFFER  [SYNCED]', cls: '', delay: 980 },
+      { text: '', cls: '', delay: 1100 },
+      { text: 'User authentication: KIERAN_GLEDHILL  [INVALID]', cls: 'err', delay: 1250 },
+      { text: 'NEW USER DETECTED >>>  Permission level: USER.SANDBOX', cls: '', delay: 2450 },
+      { text: '', cls: '', delay: 2600 },
+      { text: 'Compiling micro-operations...', cls: '', delay: 2750 },
+      { text: 'Pipeline status: STABLE', cls: '', delay: 2950 },
+      { text: 'Branch prediction unit: ONLINE', cls: '', delay: 3150 },
+      { text: '', cls: '', delay: 3300 },
+      { text: '>>> entering CPU_SIMULATION.v3 workspace...', cls: 'acc', delay: 3500 },
+    ];
 
     let done = 0;
     lines.forEach(line => {
@@ -436,8 +609,6 @@
             bootScreen.classList.add('fade-out');
             content.classList.add('visible');
             setTimeout(() => bootScreen.style.display = 'none', 700);
-
-            // Trigger reveals once boot is done
             reveals.forEach(r => {
               if (r.getBoundingClientRect().top < window.innerHeight) {
                 r.classList.add('visible');
@@ -450,7 +621,6 @@
 
     // ── ACTIVE NAV USING INTERSECTION OBSERVER ───────────
     const navItems = document.querySelectorAll('.nav-item');
-
     const linkedSections = Array.from(navItems)
       .map(item => document.querySelector(item.getAttribute('href')))
       .filter(el => el !== null);
@@ -459,33 +629,17 @@
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-
             const id = entry.target.getAttribute('id');
-
-            navItems.forEach(link => {
-              link.classList.remove('active');
-            });
-
-            const activeLink = document.querySelector(
-              `.nav-item[href="#${id}"]`
-            );
-
-            if (activeLink) {
-              activeLink.classList.add('active');
-            }
-
+            navItems.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.nav-item[href="#${id}"]`);
+            if (activeLink) activeLink.classList.add('active');
           }
         });
       },
-      {
-        root: null,
-        threshold: 0.6
-      }
+      { root: null, threshold: 0.6 }
     );
 
-    linkedSections.forEach(section => {
-      navObserver.observe(section);
-    });
+    linkedSections.forEach(section => navObserver.observe(section));
 
     // ── SCROLL REVEAL ────────────────────────────────────────
     const reveals = document.querySelectorAll('.reveal');
@@ -500,4 +654,5 @@
     reveals.forEach(r => io.observe(r));
   </script>
 </body>
+
 </html>

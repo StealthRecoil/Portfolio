@@ -251,3 +251,175 @@ body:has(a:hover) #cursor-ring, body:has(button:hover) #cursor-ring {
     background: #000;
   }
 }
+
+
+
+
+/* ── Card media (gallery images) ─────────────────────────── */
+    .card-media {
+      position: relative;
+      width: calc(100% + 2px);            /* bleed past card padding */
+      margin: -1px -1px 20px -1px;        /* flush with card border  */
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border, rgba(255,255,255,0.12));
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(0.6) brightness(0.85);
+      transition: filter 0.4s ease, transform 0.4s ease;
+    }
+
+    .project-card:hover .card-media img {
+      filter: saturate(0.85) brightness(1);
+      transform: scale(1.03);
+    }
+
+    /* Scanline overlay on card images */
+    .card-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.18) 2px,
+        rgba(0,0,0,0.18) 4px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* CLASSIFIED stamp in corner */
+    .card-media .img-stamp {
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent, #c8a96e);
+      border: 1px solid var(--accent, #c8a96e);
+      padding: 2px 6px;
+      opacity: 0.7;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* ── CPU Showcase (full-width hero image) ─────────────────── */
+    .cpu-showcase {
+      position: relative;
+      width: 100%;
+      max-height: 460px;
+      overflow: hidden;
+      margin: 48px 0 0;
+      border: 1px solid var(--border, rgba(255,255,255,0.12));
+    }
+
+    .cpu-showcase img {
+      width: 100%;
+      height: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: saturate(0.55) brightness(0.8);
+    }
+
+    /* Top scanline pass + vignette */
+    .cpu-showcase::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.55) 100%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(0,0,0,0.12) 3px,
+          rgba(0,0,0,0.12) 6px
+        );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Caption bar along the bottom */
+    .cpu-showcase figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 20px;
+      background: rgba(0,0,0,0.55);
+      backdrop-filter: blur(4px);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent, #c8a96e);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .cpu-showcase figcaption span {
+      opacity: 0.5;
+      color: inherit;
+    }
+
+    /* ── Architecture diagram image (process section) ─────────── */
+    .arch-figure {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid var(--border, rgba(255,255,255,0.12));
+    }
+
+    .arch-figure img {
+      width: 100%;
+      display: block;
+      filter: saturate(0.5) brightness(0.85) contrast(1.05);
+    }
+
+    .arch-figure::after {
+      content: 'ARCHITECTURE DIAGRAM // v1';
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent, #c8a96e);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .arch-figure figcaption {
+      padding: 10px 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      opacity: 0.5;
+      border-top: 1px solid var(--border, rgba(255,255,255,0.12));
+    }
+
+    /* ── Responsive tweaks ────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .cpu-showcase {
+        max-height: 260px;
+      }
+      .cpu-showcase img {
+        max-height: 260px;
+      }
+    }
