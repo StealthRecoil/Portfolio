@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Catfish Protocol</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow:hidden;
+}
+
+.page{
+display:none;
+height:100vh;
+padding:30px;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.page.active{
+display:flex;
+}
+
+h1{
+font-size:2.2rem;
+margin-bottom:20px;
+}
+
+p{
+max-width:600px;
+line-height:1.6;
+color:#cbd5e1;
+}
+
+button{
+margin-top:25px;
+padding:14px 28px;
+border:none;
+border-radius:999px;
+background:#4f46e5;
+color:white;
+cursor:pointer;
+font-size:1rem;
+}
+
+button:disabled{
+opacity:.4;
+cursor:not-allowed;
+}
+
+.card-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+max-width:500px;
+width:100%;
+margin-top:25px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+cursor:pointer;
+border:2px solid transparent;
+}
+
+.card.selected{
+border-color:#818cf8;
+background:#312e81;
+}
+
+.progress{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:6px;
+background:#1e293b;
+}
+
+.progress-bar{
+height:100%;
+width:11%;
+background:#818cf8;
+transition:.3s;
+}
+
+footer{
+position:fixed;
+bottom:10px;
+left:50%;
+transform:translateX(-50%);
+font-size:.7rem;
+color:#94a3b8;
+text-align:center;
+}
+
+#loadingBar{
+width:300px;
+height:18px;
+background:#1e293b;
+border-radius:999px;
+overflow:hidden;
+margin-top:25px;
+}
+
+#loadingFill{
+height:100%;
+width:0%;
+background:#818cf8;
+}
+
+#noBtn{
+position:absolute;
+}
+
+.button-area{
+position:relative;
+width:300px;
+height:150px;
+margin-top:20px;
+}
+
+.activity{
+background:#1e293b;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+width:100%;
+max-width:600px;
+}
+
+.activity-title{
+margin-bottom:10px;
+}
+
+.small-btn{
+padding:8px 12px;
+font-size:.8rem;
+margin:2px;
+}
+
+#result{
+display:none;
+margin-top:20px;
+}
+
+.confetti{
+position:fixed;
+width:8px;
+height:8px;
+pointer-events:none;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:1.8rem;
+}
+
+.card-grid{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+
+<!-- PAGE 1 -->
+
+<section class="page active">
+<h1>Hello Linda 👋</h1>
+<p>
+I was going to ask you about date ideas normally...
+<br><br>
+But I thought I'd do it my way :)
+</p>
+<button onclick="nextPage()">Continue →</button>
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="page">
+<h1>Important Disclaimer</h1>
+
+<p>
+✓ Yorkshire propaganda<br>
+✓ Programmer humour<br>
+✓ Mild catfishing<br>
+✓ Sausage dog references<br>
+✓ Excessive use of the letter x
+</p>
+
+<br>
+
+<label>
+<input type="checkbox" id="acceptBox">
+I accept these risks
+</label>
+
+<button id="acceptBtn" disabled onclick="nextPage()">
+Continue →
+</button>
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="page">
+
+<h1>Catfish Verification</h1>
+
+<p>
+Have you recovered from discovering that the alleged catfish is actually real and significantly cooler than you had originally conceived?
+</p>
+
+<div class="button-area">
+
+<button onclick="nextPage()">
+Yes
+</button>
+
+<button id="noBtn">
+No
+</button>
+
+</div>
+
+<div id="niceTry"></div>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section class="page">
+
+<h1>Choose your ideal date vibe</h1>
+
+<div class="card-grid">
+
+<div class="card">🌊 Seaside</div>
+<div class="card">🎲 Competitive</div>
+<div class="card">🎨 Creative</div>
+<div class="card">🍴 Food</div>
+<div class="card">🎮 Nerd Activities</div>
+<div class="card">🏛️ Museum</div>
+<div class="card">🌿 Surprise Me</div>
+
+</div>
+
+<button onclick="nextPage()">
+Continue →
+</button>
+
+</section>
+
+<!-- PAGE 5 -->
+
+<section class="page">
+
+<h1>Activity Assessment</h1>
+
+<div id="activities"></div>
+
+<button onclick="nextPage()">
+Continue →
+</button>
+
+</section>
+
+<!-- PAGE 6 -->
+
+<section class="page">
+
+<h1>Dietary Compatibility Check</h1>
+
+<p>
+☑ Dairy = Hiroshima<br><br>
+☑ Gluten = Smaller Hiroshima<br><br>
+☑ Vegan options are often safest<br><br>
+☑ I promise to read ingredient labels<br><br>
+☑ Sweet potato wedges are elite
+</p>
+
+<button onclick="nextPage()">
+Continue →
+</button>
+
+</section>
+
+<!-- PAGE 7 -->
+
+<section class="page">
+
+<h1>Critical Yorkshire Assessment</h1>
+
+<p>How do you pronounce Yorkshire?</p>
+
+<br>
+
+<label><input type="radio" name="york"> York-shire</label><br><br>
+<label><input type="radio" name="york"> York-sheer</label><br><br>
+<label><input type="radio" name="york"> York-shuh</label><br><br>
+<label><input type="radio" name="york"> Yaksha</label>
+
+<br>
+
+<button onclick="nextPage()">
+Continue →
+</button>
+
+</section>
+
+<!-- PAGE 8 -->
+
+<section class="page" id="loadingPage">
+
+<h1>Running Analysis...</h1>
+
+<div id="loadingBar">
+<div id="loadingFill"></div>
+</div>
+
+<p id="loadingText" style="margin-top:20px;">
+Analysing compatibility...
+</p>
+
+</section>
+
+<!-- PAGE 9 -->
+
+<section class="page">
+
+<h1>Analysis Complete</h1>
+
+<p>
+Congratulations.
+<br><br>
+It has been scientifically determined that...
+<br><br>
+<strong>
+Linda has successfully qualified for
+<br><br>
+ONE DATE™
+</strong>
+</p>
+
+<button id="missionBtn">
+Accept Mission
+</button>
+
+<div id="result">
+
+<br>
+
+<p>
+The catfish will now be in contact shortly to arrange the details.
+</p>
+
+<br>
+
+<p>
+P.S.
+<br><br>
+Thank you for making the last couple of weeks ridiculously fun.
+</p>
+
+<br>
+
+<h2>❤️</h2>
+
+</div>
+
+</section>
+
+<footer>
+Version 1.0.0<br>
+Known Bugs:<br>
+• Occasionally calls Linda "Laura"<br>
+• Yorkshire accent cannot be disabled<br>
+• Catfish classification still under investigation
+</footer>
+
+<script>
+
+const pages=document.querySelectorAll(".page");
+const progress=document.getElementById("progressBar");
+
+let current=0;
+const answers = {
+    vibes: [],
+    activities: {},
+    yorkshire: ""
+};
+
+function showPage(i){
+
+pages[current].classList.remove("active");
+
+current=i;
+
+pages[current].classList.add("active");
+
+progress.style.width=((current+1)/pages.length)*100+"%";
+
+if(document.getElementById("loadingPage").classList.contains("active")){
+startLoading();
+}
+
+}
+
+function nextPage(){
+
+if(current<pages.length-1){
+showPage(current+1);
+}
+
+}
+
+document.getElementById("acceptBox").addEventListener("change",e=>{
+
+document.getElementById("acceptBtn").disabled=!e.target.checked;
+
+});
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseenter",()=>{
+
+const x=Math.random()*220;
+const y=Math.random()*100;
+
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+
+document.getElementById("niceTry").innerText="Nice try.";
+
+});
+
+document.querySelectorAll(".card").forEach(card=>{
+
+    card.addEventListener("click",()=>{
+
+        card.classList.toggle("selected");
+
+        const value = card.innerText.trim();
+
+        if(card.classList.contains("selected")){
+
+            answers.vibes.push(value);
+
+        }else{
+
+            answers.vibes =
+                answers.vibes.filter(v=>v!==value);
+
+        }
+
+    });
+
+});
+
+const activities=[
+"Mini Golf",
+"Aquarium",
+"Arcade",
+"Escape Room",
+"Museum",
+"Ice Cream",
+"Seafront Walk",
+"Live Music"
+];
+
+const container=document.getElementById("activities");
+
+
+activities.forEach(activity=>{
+
+    const div=document.createElement("div");
+
+    div.className="activity";
+
+    const title=document.createElement("div");
+    title.className="activity-title";
+    title.textContent=activity;
+
+    div.appendChild(title);
+
+    const ratings=[
+        "❤️ Love it",
+        "🙂 Sounds fun",
+        "😐 Maybe",
+        "🙅 Probably not"
+    ];
+
+    ratings.forEach(rating=>{
+
+        const btn=document.createElement("button");
+
+        btn.className="small-btn";
+
+        btn.textContent=rating;
+
+        btn.addEventListener("click",()=>{
+
+            div.querySelectorAll(".small-btn").forEach(b=>{
+
+                b.style.opacity=".45";
+
+            });
+
+            btn.style.opacity="1";
+
+            answers.activities[activity]=rating;
+
+        });
+
+        div.appendChild(btn);
+
+    });
+
+    container.appendChild(div);
+
+});
+
+
+
+let loadingStarted=false;
+
+function startLoading(){
+
+if(loadingStarted)return;
+
+loadingStarted=true;
+document.querySelectorAll("input[name='york']").forEach(radio=>{
+
+    radio.addEventListener("change",()=>{
+
+        answers.yorkshire =
+            radio.parentElement.innerText.trim();
+
+    });
+
+});
+const messages=[
+"Analysing compatibility...",
+"Checking catfish licence...",
+"Consulting Yorkshire authorities...",
+"Reading ingredient labels...",
+"Calibrating humour...",
+"Measuring nerd compatibility...",
+"Determining optimum first date..."
+];
+
+let p=0;
+let m=0;
+
+const fill=document.getElementById("loadingFill");
+const text=document.getElementById("loadingText");
+
+const interval=setInterval(()=>{
+
+p+=4;
+
+fill.style.width=p+"%";
+
+if(m<messages.length-1 && p%15===0){
+
+m++;
+text.textContent=messages[m];
+
+}
+
+if(p>=100){
+
+clearInterval(interval);
+
+setTimeout(()=>{
+
+nextPage();
+
+},600);
+
+}
+
+},100);
+
+}
+
+document.getElementById("missionBtn").addEventListener("click",()=>{
+
+    const favouriteActivities=[];
+
+    for(const activity in answers.activities){
+
+        if(
+            answers.activities[activity] === "❤️ Love it" ||
+            answers.activities[activity] === "🙂 Sounds fun"
+        ){
+
+            favouriteActivities.push(
+                activity + " - " + answers.activities[activity]
+            );
+
+        }
+
+    }
+
+    const message =
+
+`══════════════════════
+
+THE CATFISH PROTOCOL
+
+Mission Status:
+✅ ACCEPTED
+
+Preferred Date Vibes
+
+${answers.vibes.join("\n") || "No preference"}
+
+Activities
+
+${favouriteActivities.join("\n") || "None selected"}
+
+Yorkshire Pronunciation
+
+${answers.yorkshire || "Undisclosed"}
+
+Awaiting further instructions.
+
+══════════════════════`;
+
+    window.location.href =
+        "https://wa.me/44YOURNUMBERHERE?text=" +
+        encodeURIComponent(message);
+
+});
+
+</script>
+
+</body>
+</html>

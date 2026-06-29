@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project | KGledhill</title>
+  <meta name="description" content="Project detail page template for KGledhill.com." />
+
+  <link rel="stylesheet" href="css/variables-rr.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div id="cursor" class="custom-cursor"></div>
+  <div id="cursor-ring" class="custom-cursor"></div>
+
+  <div id="boot">
+    <div id="boot-terminal">
+      <div id="boot-lines"></div>
+      <span class="cursor-blink" id="boot-cursor"></span>
+    </div>
+  </div>
+  <nav id="sidebar" aria-label="Primary">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-mark">KG</div>
+      <span class="sidebar-logo-text">kgledhill.com</span>
+    </div>
+
+    <a class="nav-item" href="index.html">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+        </svg>
+      </span>
+      <span class="nav-label">Home</span>
+    </a>
+
+    <a class="nav-item active" href="#overview">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+        </svg>
+      </span>
+      <span class="nav-label">Overview</span>
+    </a>
+
+    <a class="nav-item" href="#challenge">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3l-8.47-14.14a2 2 0 00-3.42 0z" />
+        </svg>
+      </span>
+      <span class="nav-label">Challenge</span>
+    </a>
+
+    <a class="nav-item" href="#process">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+        </svg>
+      </span>
+      <span class="nav-label">Process</span>
+    </a>
+
+    <a class="nav-item" href="#gallery">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <circle cx="8.5" cy="8.5" r="1.5" />
+          <polyline points="21 15 16 10 5 21" />
+        </svg>
+      </span>
+      <span class="nav-label">Gallery</span>
+    </a>
+
+    <a class="nav-item" href="#outcome">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 19l6-6 4 4 6-8" />
+          <path d="M4 13v6h6" />
+        </svg>
+      </span>
+      <span class="nav-label">Outcome</span>
+    </a>
+
+    <a class="nav-item" href="#contact">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+      </span>
+      <span class="nav-label">Contact</span>
+    </a>
+
+    <div class="nav-spacer"></div>
+
+    <div class="nav-status">
+      <div class="status-dot"></div>
+      <div class="status-text">Available<br>Sep 2026</div>
+    </div>
+  </nav>
+
+  <main id="main" class="visible">
+
+  <!-- ═══════════════════════════════════════════════════════
+     OVERVIEW / HERO
+     Full-width cinematic banner background
+     Replace your existing #overview section with this
+     ═══════════════════════════════════════════════════════ -->
+<section
+  id="overview"
+  class="section hero hero-banner reveal visible"
+  aria-label="Project overview"
+>
+
+  <!-- Full-width background image -->
+  <div class="hero-bg hero-bg-full">
+    <img
+      src="rr-hero-bg.jpg"
+      alt="Rolls-Royce Motor Cars manufacturing environment"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Dark overlay for readability -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="container hero-content">
+
+    <!-- Main hero content -->
+    <div class="grid two">
+
+      <!-- Left: Text -->
+      <div class="hero-text">
+
+        <div class="section-label">
+          Placement // Rolls-Royce Motor Cars
+        </div>
+
+        <h1 class="hero-title">
+          Digital Innovation
+          <span class="accent">Placement Year</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Manufacturing systems, production tooling, automation and analytics
+          inside a live automotive environment.
+        </p>
+
+        <p class="hero-summary">
+          During a year-long placement within the Digital Innovation department
+          at Rolls-Royce Motor Cars, I designed and delivered production-facing
+          software systems used across the manufacturing environment.
+          My work ranged from enterprise asset tracking and Power Platform
+          development to safety-critical Python analysis and factory automation.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn" href="index.html#projects">Back to projects</a>
+          <a class="btn btn-ghost" href="#process">Read more</a>
+        </div>
+
+        <div class="hero-links" aria-label="Project links">
+          <a class="link" href="#gallery">Projects</a>
+          <a class="link" href="#outcome">Impact</a>
+          <a class="link" href="#contact">Contact</a>
+        </div>
+
+      </div>
+
+      <!-- Right: Metadata panel -->
+      <aside class="panel classified">
+
+        <h3>Placement Metadata</h3>
+
+        <p class="muted">
+          Digital Innovation Placement within a live automotive manufacturing environment.
+        </p>
+
+        <div class="grid two compact">
+
+          <div>
+            <h4 class="mini-head">Role</h4>
+            <p>Digital Innovation Intern</p>
+          </div>
+
+          <div>
+            <h4 class="mini-head">Duration</h4>
+            <p>Jul 2025 – Jul 2026</p>
+          </div>
+
+          <div>
+            <h4 class="mini-head">Environment</h4>
+            <p>Production IT / Manufacturing</p>
+          </div>
+
+          <div>
+            <h4 class="mini-head">Outcome</h4>
+            <p>O+ Placement Grade</p>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 16px;">
+          <span class="tag">Python</span>
+          <span class="tag">Oracle APEX</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Automation</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Manufacturing IT</span>
+        </div>
+
+        <div class="project-scanline"></div>
+
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CHALLENGE
+       ═══════════════════════════════════════════════════════ -->
+  <section id="challenge" class="section alt reveal visible">
+
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">01 // Environment</div>
+        <h2 class="section-title">Working in a live production environment</h2>
+      </div>
+
+      <div class="panel">
+
+        <h3>The challenge</h3>
+
+        <p>
+          The placement involved developing and supporting software systems
+          inside a live automotive manufacturing environment where reliability,
+          usability, traceability and operational impact mattered immediately.
+        </p>
+
+        <p>
+          Unlike university projects, solutions were deployed directly into
+          production workflows and used daily by manufacturing teams and senior
+          management across the plant.
+        </p>
+
+        <p>
+          The role combined software engineering, stakeholder management,
+          systems thinking, manufacturing process understanding and rapid
+          problem solving under operational constraints.
+        </p>
+
+        <blockquote class="quote">
+          <p>
+            "Systems were expected to work reliably, integrate cleanly with existing
+            processes, and provide measurable operational value."
+          </p>
+        </blockquote>
+
+        <div class="project-scanline"></div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PROCESS / MAIN PROJECT
+       ═══════════════════════════════════════════════════════ -->
+  <section id="process" class="section reveal visible">
+
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">02 // Major Project</div>
+        <h2 class="section-title">Enterprise Asset Tracking System</h2>
+      </div>
+
+      <figure class="arch-figure" style="margin-bottom: 32px;" aria-label="Asset tracking system">
+        <img
+          src="tracking-system.jpg"
+          alt="Asset tracking dashboard and QR system"
+          loading="lazy"
+        />
+
+        <figcaption>
+          FIG 1 — Production Asset Tracking Platform · Oracle APEX · QR Integrated
+        </figcaption>
+      </figure>
+
+      <div class="panel classified">
+
+        <h3>Production Asset Tracking Platform</h3>
+
+        <p>
+          The largest project undertaken during the placement was the design and
+          development of a comprehensive production asset tracking system built
+          using Oracle APEX.
+        </p>
+
+        <p>
+          The system was developed collaboratively with another intern and involved
+          the full software lifecycle:
+        </p>
+
+        <ul class="bullets">
+          <li>Identifying operational problems across the production line.</li>
+          <li>Gathering requirements from stakeholders and manufacturing teams.</li>
+          <li>Designing database architecture and workflows.</li>
+          <li>Developing frontend and backend systems.</li>
+          <li>Deploying production-ready functionality to live users.</li>
+          <li>Providing documentation, training and support handover.</li>
+        </ul>
+
+        <p>
+          The platform tracks over 2,100 manufacturing jigs and tools across
+          the assembly line using QR-code identification and live condition reporting.
+        </p>
+
+        <p>
+          A fully normalised Oracle database structure was designed and implemented,
+          alongside a custom Zebra printer pipeline using RESTful print services,
+          ZPL URL encoding and automated print queue handling.
+        </p>
+
+        <p>
+          The application is now used multiple times daily by over 100 concurrent users
+          across the manufacturing environment.
+        </p>
+
+        <p>
+          Data from the platform feeds directly into live Power BI dashboards used for
+          “Ready-to-Run” manufacturing decisions at multiple levels of management.
+        </p>
+
+        <blockquote class="quote">
+          <p>
+            "The completed system generated a calculated operational saving
+            of approximately £100,000 per year."
+          </p>
+        </blockquote>
+
+        <div class="project-scanline"></div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       GALLERY / PROJECTS
+       ═══════════════════════════════════════════════════════ -->
+  <section id="gallery" class="section alt reveal visible">
+
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">03 // Projects</div>
+        <h2 class="section-title">Additional Work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- CARD 1 -->
+        <article class="project-card classified">
+
+          <figure class="card-media">
+            <img
+              src="python-analysis.jpg"
+              alt="Python production data analysis"
+              loading="lazy"
+            />
+
+            <span class="img-stamp">PYTHON · SAFETY</span>
+          </figure>
+
+          <h3>Safety-Critical Data Analysis</h3>
+
+          <span class="tag">Python</span>
+          <span class="tag">Manufacturing Data</span>
+
+          <p>
+            Following a safety-critical discovery relating to potentially loose fixings,
+            I was tasked with analysing over 270,000 rows of historical production data
+            covering more than 8 years of manufacturing records.
+          </p>
+
+          <p>
+            Due to internal restrictions, the analysis was implemented entirely in base Python
+            without external libraries such as pandas.
+            A custom CSV parsing and dictionary-based processing system was developed
+            to execute complex validation logic efficiently.
+          </p>
+
+          <p>
+            The final solution completed analysis in approximately 7 seconds and was verified
+            as accurate. The resulting insights contributed directly to vehicle recall
+            investigations and safety review processes.
+          </p>
+
+          <div class="project-scanline"></div>
+
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="project-card classified">
+
+          <figure class="card-media">
+            <img
+              src="automation.jpg"
+              alt="Automation workflow"
+              loading="lazy"
+            />
+
+            <span class="img-stamp">AUTO · PYTHON</span>
+          </figure>
+
+          <h3>Operational Process Automation</h3>
+
+          <span class="tag">Python</span>
+          <span class="tag">Automation</span>
+
+          <p>
+            Developed a custom automation system to replace a repetitive
+            manual manufacturing workflow that previously consumed
+            approximately two hours per day.
+          </p>
+
+          <p>
+            The automation interacted directly with Windows-level UI controls
+            and used clipboard-based state interpretation and deterministic
+            navigation logic to make operational decisions.
+          </p>
+
+          <p>
+            Robust error handling and Microsoft Teams webhook integration were
+            implemented to automatically notify owners when unexpected conditions occurred.
+          </p>
+
+          <div class="project-scanline"></div>
+
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="project-card classified">
+
+          <figure class="card-media">
+            <img
+              src="power-platform.jpg"
+              alt="Power Platform applications"
+              loading="lazy"
+            />
+
+            <span class="img-stamp">POWER · PLATFORM</span>
+          </figure>
+
+          <h3>Power Platform Solutions</h3>
+
+          <span class="tag">Power Apps</span>
+          <span class="tag">Power BI</span>
+
+          <p>
+            Developed multiple production-facing Power Platform solutions,
+            including operational startup systems, stock management tools
+            and technical assessment applications.
+          </p>
+
+          <p>
+            Several applications extended SharePoint beyond native functionality
+            using custom relational logic, bespoke interfaces and client-side workflows.
+          </p>
+
+          <p>
+            Supporting Power BI dashboards and reporting systems were also developed
+            for manufacturing analytics, operational readiness and technical team analysis.
+          </p>
+
+          <div class="project-scanline"></div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       OUTCOME
+       ═══════════════════════════════════════════════════════ -->
+  <section id="outcome" class="section reveal visible">
+
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">04 // Outcome</div>
+        <h2 class="section-title">Results and impact</h2>
+      </div>
+
+      <div class="grid two">
+
+        <div class="panel">
+
+          <h3>Technical growth</h3>
+
+          <p>
+            The placement massively accelerated both my technical and professional development.
+            Over the course of the year, I transitioned from building academic projects
+            to designing and deploying systems used in a real production environment.
+          </p>
+
+          <p>
+            The role required balancing software engineering,
+            stakeholder communication, manufacturing constraints,
+            operational reliability and rapid iteration simultaneously.
+          </p>
+
+          <ul class="bullets">
+            <li>Delivered multiple production-facing software systems.</li>
+            <li>Worked directly with senior management and manufacturing stakeholders.</li>
+            <li>Led sprint activity and project accountability within agile workflows.</li>
+            <li>Developed automation, analytics and operational tooling from scratch.</li>
+            <li>Worked across Oracle, Power Platform, Python, SQL and Power BI ecosystems.</li>
+          </ul>
+
+        </div>
+
+        <div class="panel">
+
+          <h3>Placement outcome</h3>
+
+          <p>
+            The placement concluded with an O+ performance grading,
+            the highest possible classification available within the programme.
+          </p>
+
+          <blockquote class="quote">
+            <p>
+              "Setting a standard worthy of imitation."
+            </p>
+          </blockquote>
+
+          <p>
+            Beyond technical work, the experience also involved relocating over 300 miles away from home,
+            adapting to full-time industry work for the first time,
+            and operating independently inside a large-scale manufacturing organisation.
+          </p>
+
+          <p>
+            The experience fundamentally changed both my technical confidence
+            and my understanding of what effective engineering and systems delivery
+            looks like in practice.
+          </p>
+
+          <div class="project-scanline"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT
+       ═══════════════════════════════════════════════════════ -->
+  <section id="contact" class="section alt reveal visible">
+
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">05 // Next</div>
+        <h2 class="section-title">More detail</h2>
+      </div>
+
+      <div class="grid two">
+
+        <div class="panel">
+
+          <h3>Links</h3>
+
+          <div class="contact-list">
+
+            <a class="contact-item" href="index.html#projects">
+              <span class="contact-label">Projects</span>
+              <span class="contact-value">Return</span>
+            </a>
+
+            <a class="contact-item" href="index.html#contact">
+              <span class="contact-label">Contact</span>
+              <span class="contact-value">Reach out</span>
+            </a>
+
+            <a class="contact-item" href="#">
+              <span class="contact-label">CV</span>
+              <span class="contact-value">Download</span>
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="panel">
+
+          <h3>Key Technologies</h3>
+
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+
+            <span class="tag">Oracle APEX</span>
+            <span class="tag">Python</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Power Apps</span>
+            <span class="tag">Power Query</span>
+            <span class="tag">SQL</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">ZPL</span>
+            <span class="tag">SharePoint</span>
+            <span class="tag">Agile</span>
+            <span class="tag">Manufacturing IT</span>
+            <span class="tag">Data Analytics</span>
+
+          </div>
+
+          <div class="project-scanline"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© 2026 Kieran Gledhill. System Online.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="#overview">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── CURSOR SCRIPT (Desktop Only) ────────────────────────
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+
+    // Check if device supports hover (ignores mobile touch screens)
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      let mx = -100, my = -100, rx = -100, ry = -100;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      (function animCursor() {
+        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+        rx += (mx - rx) * 0.14; ry += (my - ry) * 0.14;
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+        requestAnimationFrame(animCursor);
+      })();
+    } else {
+      cursor.style.display = 'none';
+      ring.style.display = 'none';
+    }
+
+    // ── BOOT SEQUENCE ────────────────────────────────────────
+    const bootEl = document.getElementById('boot-lines');
+    const bootScreen = document.getElementById('boot');
+    const content = document.getElementById('main');
+
+    const lines = [
+  { text: 'Gledhill Systems >>> ROLLS-ROYCE_MOTORCARS.plcmnt', cls: 'dim', delay: 0 },
+  { text: 'Initialising execution environment...', cls: '', delay: 180 },
+  { text: 'Loading experience metrics...', cls: '', delay: 280 },
+  { text: 'Mounting architecture: FULL_STACK_DEVELOPMENT', cls: '', delay: 380 },
+  { text: 'Verifying clock cycle stability...', cls: '', delay: 480 },
+  { text: 'Checking stakeholder alignment...', cls: '', delay: 580 },
+  { text: 'Integrating manufacturing constraints...', cls: '', delay: 680 },
+  { text: 'Optimising for operational impact...', cls: '', delay: 780 },
+  { text: 'Compiling production-ready code...', cls: '', delay: 880 },
+  { text: 'Running reliability checks...', cls: '', delay: 980 },
+  { text: 'Finalising deployment pipelines...', cls: '', delay: 1080 },
+  { text: '>>> BOOT SEQUENCE COMPLETE <<<', cls: 'acc', delay: 1180 },
+  { text: '>>> entering ROLLS-ROYCE_MOTORCARS.plcmnt...', cls: 'acc', delay: 1200 },
+];
+
+    let done = 0;
+    lines.forEach(line => {
+      setTimeout(() => {
+        const d = document.createElement('div');
+        d.className = line.cls;
+        d.textContent = line.text;
+        bootEl.appendChild(d);
+        done++;
+        if (done === lines.length) {
+          setTimeout(() => {
+            bootScreen.classList.add('fade-out');
+            content.classList.add('visible');
+            setTimeout(() => bootScreen.style.display = 'none', 700);
+
+            // Trigger reveals once boot is done
+            reveals.forEach(r => {
+              if (r.getBoundingClientRect().top < window.innerHeight) {
+                r.classList.add('visible');
+              }
+            });
+          }, 600);
+        }
+      }, line.delay);
+    });
+
+    // ── ACTIVE NAV USING INTERSECTION OBSERVER ───────────
+    const navItems = document.querySelectorAll('.nav-item');
+
+    const linkedSections = Array.from(navItems)
+      .map(item => document.querySelector(item.getAttribute('href')))
+      .filter(el => el !== null);
+
+    const navObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+
+            const id = entry.target.getAttribute('id');
+
+            navItems.forEach(link => {
+              link.classList.remove('active');
+            });
+
+            const activeLink = document.querySelector(
+              `.nav-item[href="#${id}"]`
+            );
+
+            if (activeLink) {
+              activeLink.classList.add('active');
+            }
+
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.6
+      }
+    );
+
+    linkedSections.forEach(section => {
+      navObserver.observe(section);
+    });
+
+    // ── SCROLL REVEAL ────────────────────────────────────────
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => io.observe(r));
+  </script>
+</body>
+</html>

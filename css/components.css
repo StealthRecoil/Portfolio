@@ -174,3 +174,107 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.1);
 }
 textarea { resize: vertical; }
+
+/* ═══════════════════════════════════════════════════════
+   FULL-WIDTH HERO BANNER
+   Add to your CSS (components.css or layout.css)
+   ═══════════════════════════════════════════════════════ */
+
+.hero-banner {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+/* Full screen background image */
+.hero-bg-full {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+
+/* Full screen background image */
+.hero-bg-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter:
+    brightness(0.48)
+    saturate(1.15)
+    contrast(1.05);
+  transform: scale(1.03);
+}
+
+/* Gradient overlay for readability (reduced opacity) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 10, 18, 0.72) 0%,
+      rgba(6, 10, 18, 0.58) 35%,
+      rgba(6, 10, 18, 0.38) 60%,
+      rgba(6, 10, 18, 0.62) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.04) 0%,
+      rgba(0, 0, 0, 0.28) 100%
+    );
+}
+
+/* Content sits above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Improve spacing inside hero */
+.hero-banner .grid.two {
+  align-items: center;
+  gap: 48px;
+}
+
+/* Make metadata panel slightly translucent */
+.hero-banner .panel.classified {
+  background: rgba(8, 12, 20, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Enhance title readability */
+.hero-banner .hero-title,
+.hero-banner .hero-subtitle,
+.hero-banner .hero-summary,
+.hero-banner .section-label {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.55);
+}
+
+/* Mobile layout */
+@media (max-width: 900px) {
+  .hero-banner {
+    min-height: auto;
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .hero-banner .grid.two {
+    gap: 32px;
+  }
+
+  .hero-bg-full img {
+    object-position: center center;
+  }
+}
