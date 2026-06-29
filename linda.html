@@ -323,10 +323,10 @@ Continue →
 
 <br>
 
-<label><input type="radio" name="york"> York-shire</label><br><br>
-<label><input type="radio" name="york"> York-sheer</label><br><br>
-<label><input type="radio" name="york"> York-shuh</label><br><br>
-<label><input type="radio" name="york"> Yaksha</label>
+<label><input type="radio" name="york" value="York-shire"> York-shire</label><br><br>
+<label><input type="radio" name="york" value="York-sheer"> York-sheer</label><br><br>
+<label><input type="radio" name="york" value="York-shuh"> York-shuh</label><br><br>
+<label><input type="radio" name="york" value="Yaksha"> Yaksha</label>
 
 <br>
 
@@ -417,7 +417,11 @@ const answers = {
     activities: {},
     yorkshire: ""
 };
-
+document.querySelectorAll("input[name='york']").forEach(radio => {
+    radio.addEventListener("change", (e) => {
+        answers.yorkshire = e.target.value;
+    });
+});
 function showPage(i){
 
 pages[current].classList.remove("active");
@@ -556,16 +560,7 @@ function startLoading(){
 if(loadingStarted)return;
 
 loadingStarted=true;
-document.querySelectorAll("input[name='york']").forEach(radio=>{
 
-    radio.addEventListener("change",()=>{
-
-        answers.yorkshire =
-            radio.parentElement.innerText.trim();
-
-    });
-
-});
 const messages=[
 "Analysing compatibility...",
 "Checking catfish licence...",
