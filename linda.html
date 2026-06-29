@@ -431,7 +431,13 @@ progress.style.width=((current+1)/pages.length)*100+"%";
 if(document.getElementById("loadingPage").classList.contains("active")){
 startLoading();
 }
+const footer = document.querySelector("footer");
 
+if (i === 0) {
+    footer.style.display = "block";
+} else {
+    footer.style.display = "none";
+}
 }
 
 function nextPage(){
