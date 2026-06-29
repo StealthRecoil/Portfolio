@@ -16,7 +16,14 @@ font-family:Arial,Helvetica,sans-serif;
 body{
 background:#0f172a;
 color:white;
-overflow:hidden;
+overflow-x: hidden;
+overflow-y: auto;
+}
+
+#activities{
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 5px;
 }
 
 .page{
@@ -141,6 +148,7 @@ margin:10px 0;
 border-radius:10px;
 width:100%;
 max-width:600px;
+overflow-wrap: anywhere;
 }
 
 .activity-title{
@@ -454,25 +462,24 @@ document.getElementById("niceTry").innerText="Nice try.";
 
 });
 
-document.querySelectorAll(".card").forEach(card=>{
+document.querySelectorAll(".card").forEach(card => {
 
-    card.addEventListener("click",()=>{
-
-        card.classList.toggle("selected");
+    card.addEventListener("click", () => {
 
         const value = card.innerText.trim();
 
-        if(card.classList.contains("selected")){
+        card.classList.toggle("selected");
 
-            answers.vibes.push(value);
+        if (card.classList.contains("selected")) {
 
-        }else{
+            if (!answers.vibes.includes(value)) {
+                answers.vibes.push(value);
+            }
 
-            answers.vibes =
-                answers.vibes.filter(v=>v!==value);
+        } else {
 
+            answers.vibes = answers.vibes.filter(v => v !== value);
         }
-
     });
 
 });
@@ -491,53 +498,47 @@ const activities=[
 const container=document.getElementById("activities");
 
 
-activities.forEach(activity=>{
+activities.forEach(activity => {
 
-    const div=document.createElement("div");
+    const div = document.createElement("div");
+    div.className = "activity";
 
-    div.className="activity";
-
-    const title=document.createElement("div");
-    title.className="activity-title";
-    title.textContent=activity;
+    const title = document.createElement("div");
+    title.className = "activity-title";
+    title.textContent = activity;
 
     div.appendChild(title);
 
-    const ratings=[
+    const ratings = [
         "❤️ Love it",
         "🙂 Sounds fun",
         "😐 Maybe",
         "🙅 Probably not"
     ];
 
-    ratings.forEach(rating=>{
+    ratings.forEach(rating => {
 
-        const btn=document.createElement("button");
+        const btn = document.createElement("button");
+        btn.className = "small-btn";
+        btn.textContent = rating;
 
-        btn.className="small-btn";
+        btn.addEventListener("click", () => {
 
-        btn.textContent=rating;
+            // store answer
+            answers.activities[activity] = rating;
 
-        btn.addEventListener("click",()=>{
-
-            div.querySelectorAll(".small-btn").forEach(b=>{
-
-                b.style.opacity=".45";
-
+            // visual state
+            div.querySelectorAll("button").forEach(b => {
+                b.style.opacity = "0.4";
             });
 
-            btn.style.opacity="1";
-
-            answers.activities[activity]=rating;
-
+            btn.style.opacity = "1";
         });
 
         div.appendChild(btn);
-
     });
 
     container.appendChild(div);
-
 });
 
 
