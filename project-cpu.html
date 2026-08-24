@@ -1,662 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project | KGledhill</title>
-  <meta name="description" content="Project detail page template for KGledhill.com." />
-
+  <title>8-Bit CPU Built in Logic World | Kieran Gledhill</title>
+  <meta name="description" content="A working 8-bit sequential processor designed and hand-wired from digital logic in Logic World, including ALU, RAM, registers, control and Fibonacci execution." />
+  <link rel="canonical" href="https://kgledhill.com/project-cpu.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="8-Bit CPU Built in Logic World | Kieran Gledhill" />
+  <meta property="og:description" content="A working 8-bit sequential processor designed and hand-wired from digital logic in Logic World, including ALU, RAM, registers, control and Fibonacci execution." />
+  <meta property="og:url" content="https://kgledhill.com/project-cpu.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#120826" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="css/variables-CPU.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/effects.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <noscript><style>#boot{display:none!important}#main{opacity:1!important}.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
+    <body data-boot-profile="cpu">
+      <a class="skip-link" href="#main">Skip to content</a>
+    <div id="cursor" class="custom-cursor" aria-hidden="true"></div>
+<div id="cursor-ring" class="custom-cursor" aria-hidden="true"></div>
+<div id="boot" aria-hidden="true">
+  <div id="boot-terminal">
+    <div id="boot-lines"></div>
+    <span class="cursor-blink" id="boot-cursor"></span>
+  </div>
+</div>
+    <nav id="sidebar" aria-label="Primary">
+  <a class="sidebar-logo" href="index.html" aria-label="Kieran Gledhill portfolio home">
+    <div class="sidebar-logo-mark">KG</div>
+    <span class="sidebar-logo-text">kgledhill.com</span>
+  </a>
+    <a class="nav-item" href="index.html">
+  <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg></span>
+  <span class="nav-label">Home</span>
+</a>
+<a class="nav-item active" href="#overview">
+  <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg></span>
+  <span class="nav-label">Overview</span>
+</a>
+<a class="nav-item" href="#challenge">
+  <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 9v4" /><path d="M12 17h.01" /><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3l-8.47-14.14a2 2 0 00-3.42 0z" /></svg></span>
+  <span class="nav-label">Challenge</span>
+</a>
+<a class="nav-item" href="#process">
+  <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg></span>
+  <span class="nav-label">Process</span>
+</a>
+<a class="nav-item" href="#gallery">
+  <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg></span>
+  <span class="nav-label">Gallery</span>
+</a>
+<a class="nav-item" href="#outcome">
+  <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19l6-6 4 4 6-8" /><path d="M4 13v6h6" /></svg></span>
+  <span class="nav-label">Outcome</span>
+</a>
+<a class="nav-item" href="#contact">
+  <span class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg></span>
+  <span class="nav-label">Contact</span>
+</a>
+  <div class="nav-spacer"></div>
+  <div class="nav-status" aria-label="Availability">
+    <div class="status-dot"></div>
+    <div class="status-text">Open to<br>2027 roles</div>
+  </div>
+</nav>
+    <main id="main">
+  <section id="overview" class="section hero reveal" aria-label="Project overview">
+    <div class="hero-overlay" aria-hidden="true"></div><div class="container hero-content"><div class="grid two">
+      <div class="hero-text"><div class="section-label">Project // Computer Architecture</div><h1 class="hero-title">8-Bit <span class="accent">Sequential Processor</span></h1>
+        <p class="hero-subtitle">A working CPU built from wires, gates and logic components inside Logic World.</p>
+        <p class="hero-summary">A custom 8-bit computational system designed from first principles to make arithmetic, memory, control logic and clocking tangible. Version 1 is complete and executes Fibonacci using hardwired sequential control; version 2 is in development.</p>
+        <div class="hero-cta"><a class="btn" href="index.html#projects">Back to projects</a><a class="btn btn-ghost" href="#process">View specification</a></div>
+        <div class="hero-links"><a class="link" href="#gallery">Gallery</a><a class="link" href="#outcome">Outcome</a><a class="link" href="#contact">Links</a></div>
+      </div>
+      <aside class="panel classified"><h3>Project Metadata</h3><p class="muted">A working 8-bit processor built manually from digital logic components.</p><div class="grid two compact">
+        <div><h4 class="mini-head">Role</h4><p>Architecture, design & implementation</p></div><div><h4 class="mini-head">Status</h4><p>v1 complete · v2 in development</p></div><div><h4 class="mini-head">Environment</h4><p>Logic World</p></div><div><h4 class="mini-head">Focus</h4><p>Computer architecture</p></div></div>
+        <div style="margin-top:16px"><span class="tag">Digital Logic</span><span class="tag">8-bit</span><span class="tag">Systems Design</span><span class="tag">Assembly Concepts</span></div><div class="project-scanline"></div>
+      </aside>
+    </div>
+    <figure class="cpu-showcase" aria-label="Full CPU build overview"><img src="TopView.gif" alt="Full view of the 8-bit sequential processor inside Logic World" loading="eager" /><figcaption>CPU // Full Build Overview <span>LOGIC_WORLD · 8-BIT · SEQUENTIAL</span></figcaption></figure>
+    </div>
+  </section>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <section id="challenge" class="section alt reveal"><div class="container"><div class="section-head"><div class="section-label">01 // Challenge</div><h2 class="section-title">What the system does</h2></div>
+    <div class="panel"><h3>From individual gates to a working computation</h3><p>Version 1 executes a Fibonacci sequence using a modular hardwired instruction chain. The ALU, memory, registers, buses, clock and control logic were all designed and wired manually inside Logic World rather than assembled from prebuilt processor modules.</p><p>The goal was not simply to reproduce a textbook diagram. It was to build something that had to behave correctly at the signal level, where timing mistakes, bus conflicts and a single incorrect bit could break the whole computation.</p><p>Version 2 is under development and is intended to add more capable execution control, branching, indirect addressing and a wider instruction set.</p><div class="project-scanline"></div></div>
+  </div></section>
 
-  <div id="cursor" class="custom-cursor"></div>
-  <div id="cursor-ring" class="custom-cursor"></div>
+  <section class="section reveal"><div class="container"><div class="section-head"><div class="section-label">02 // Motivation</div><h2 class="section-title">Why I built it</h2></div>
+    <div class="panel"><p>I wanted to understand how computers work underneath the abstraction layers - not only how to write code for a processor, but how the processor itself stores state, moves data, performs arithmetic and coordinates operations.</p><p>Building from individual logic components removes the compiler, framework and operating system that normally hide those details. Every signal transition and timing decision becomes an engineering problem you can see.</p><p>The project began with binary addition and grew into a complete sequential system with memory, registers, control logic and a functioning execution cycle.</p><blockquote class="quote"><p>“At some point, I realised I had accidentally started building an actual computer.”</p></blockquote><div class="project-scanline"></div></div>
+  </div></section>
 
-  <div id="boot">
-    <div id="boot-terminal">
-      <div id="boot-lines"></div>
-      <span class="cursor-blink" id="boot-cursor"></span>
+  <section id="process" class="section reveal"><div class="container"><div class="section-head"><div class="section-label">03 // Process</div><h2 class="section-title">System specification · v1</h2></div>
+    <figure class="arch-figure" style="margin-bottom:32px" aria-label="v1 architecture diagram"><img src="Sketches.jpg" alt="Hand-drawn planning diagram for the v1 CPU architecture" loading="lazy" /><figcaption>FIG 1 — pre-v1 architecture planning · Von Neumann · Fibonacci execution</figcaption></figure>
+    <div class="grid three">
+      <article class="panel classified"><h3>Architecture</h3><p>PROCESSOR_TYPE: Sequential hardwired computation</p><p>DATA_WIDTH: 8-bit</p><p>ADDRESS_WIDTH: 4-bit (16 address positions)</p><p>BUS_ARCHITECTURE: Von Neumann shared data/instruction bus</p><p>CLOCK_SYSTEM: Automatic with manual step override</p><p>ENVIRONMENT: Logic World</p><div class="project-scanline"></div></article>
+      <article class="panel classified"><h3>Memory</h3><p>ADDRESS_SPACE: 16 positions</p><p>IMPLEMENTED_MEMORY: 8 bytes in v1</p><p>MEMORY_TYPE: Read/write RAM</p><p>ACCESS_METHOD: Direct addressing</p><p>REGISTERS: Accumulator, MDR and purpose-built storage registers</p><div class="project-scanline"></div></article>
+      <article class="panel classified"><h3>Control</h3><p>ALU: Operational · ADD</p><p>CU: Hardwired sequential control</p><p>CLK: Automatic + manual override</p><p>BUS: Operational</p><p>OUTPUT: LED/lightboard bit visualisation</p><p>FLAGS: Overflow implemented</p><p>BRANCHING / INDIRECT ADDRESSING: Not present in v1</p><div class="project-scanline"></div></article>
+    </div>
+  </div></section>
+
+  <section id="gallery" class="section alt reveal"><div class="container"><div class="section-head"><div class="section-label">04 // Media</div><h2 class="section-title">Gallery</h2></div><div class="projects-grid">
+    <article class="project-card classified"><figure class="card-media"><img src="ALU.png" alt="Close-up of the 8-bit ALU and carry chain in Logic World" loading="lazy" /><span class="img-stamp">ALU · v1</span></figure><h3>ALU Design</h3><span class="tag">Arithmetic Logic</span><span class="tag">8-bit Addition</span><p>The ALU uses chained carry logic across the full 8-bit width. Early failures were often caused by incorrect carry propagation, where one bad bit could corrupt the entire result.</p><div class="project-scanline"></div></article>
+    <article class="project-card classified"><figure class="card-media"><img src="Register.png" alt="RAM and register subsystem in Logic World" loading="lazy" /><span class="img-stamp">RAM · v1</span></figure><h3>RAM and Registers</h3><span class="tag">Memory</span><span class="tag">8-bit Storage</span><p>Version 1 implements 8 bytes of read/write memory within a 4-bit, 16-position address space, alongside purpose-built registers and LED-connected outputs. Tracing faults across shared bidirectional buses became a major part of the debugging process.</p><div class="project-scanline"></div></article>
+    <article class="project-card classified"><figure class="card-media"><img src="Fibonacci.png" alt="LED output displaying the Fibonacci program during execution" loading="lazy" /><span class="img-stamp">EXEC · FIB</span></figure><h3>Fibonacci Execution</h3><span class="tag">Bit-Level Programming</span><span class="tag">Hardwired Control</span><p>Fibonacci was chosen because it requires repeated arithmetic and memory operations, making it a useful end-to-end test of the processor. The execution sequence was planned on paper before being translated into control wiring.</p><div class="project-scanline"></div></article>
+  </div></div></section>
+
+  <section id="outcome" class="section reveal"><div class="container"><div class="section-head"><div class="section-label">05 // Outcome</div><h2 class="section-title">What it demonstrated</h2></div><div class="grid two">
+    <div class="panel"><h3>Engineering outcome</h3><p>The project turned registers, buses, clock cycles and instruction execution from abstract concepts into practical engineering problems. Building even simple functionality at hardware level made the cost of every abstraction much more obvious.</p><ul class="bullets"><li>Designed and implemented a working sequential processor architecture.</li><li>Built modular memory, ALU and control subsystems from logic components.</li><li>Executed a real iterative computation: Fibonacci generation.</li><li>Developed systematic debugging strategies for signal-level faults.</li></ul></div>
+    <div class="panel"><h3>Next steps</h3><p>Version 2 is the next major milestone. The current direction is to expand the instruction set, add branching and indirect addressing, and replace the fixed v1 execution chain with more capable control logic.</p><p>Longer term, the project is a platform for exploring larger address spaces, richer ALU operations and more conventional processor architectures.</p><div class="project-scanline"></div></div>
+  </div></div></section>
+
+  <section id="contact" class="section alt reveal"><div class="container"><div class="section-head"><div class="section-label">06 // Next</div><h2 class="section-title">More detail</h2></div><div class="grid two">
+    <div class="panel"><h3>Links</h3><div class="contact-list"><a class="contact-item" href="index.html#projects"><span class="contact-label">Projects</span><span class="contact-value">Return</span></a><a class="contact-item" href="placement-rr.html"><span class="contact-label">Placement</span><span class="contact-value">Rolls-Royce overview</span></a><a class="contact-item" href="Kieran_Gledhill_CV.pdf" download><span class="contact-label">CV</span><span class="contact-value">Download PDF</span></a></div></div>
+    <div class="panel"><h3>Project status</h3><p><strong>v1:</strong> complete and stable, with the Fibonacci demonstration working end-to-end.</p><p><strong>v2:</strong> active development. The page will evolve as the architecture becomes more capable.</p><p class="muted tiny">The claims on this page intentionally distinguish completed v1 functionality from planned v2 features.</p><div class="project-scanline"></div></div>
+  </div></div></section>
+</main>
+    <footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="muted">© 2026 Kieran Gledhill. System Online.</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/kierandgledhill/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:KieranDGledhill@gmail.com">Email</a>
+
+      <a href="#overview">Back to top</a>
     </div>
   </div>
-
-  <nav id="sidebar" aria-label="Primary">
-    <div class="sidebar-logo">
-      <div class="sidebar-logo-mark">KG</div>
-      <span class="sidebar-logo-text">kgledhill.com</span>
-    </div>
-
-    <a class="nav-item" href="index.html">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-        </svg>
-      </span>
-      <span class="nav-label">Home</span>
-    </a>
-
-    <a class="nav-item active" href="#overview">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="7" height="7" />
-          <rect x="14" y="3" width="7" height="7" />
-          <rect x="3" y="14" width="7" height="7" />
-          <rect x="14" y="14" width="7" height="7" />
-        </svg>
-      </span>
-      <span class="nav-label">Overview</span>
-    </a>
-
-    <a class="nav-item" href="#challenge">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 9v4" />
-          <path d="M12 17h.01" />
-          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3l-8.47-14.14a2 2 0 00-3.42 0z" />
-        </svg>
-      </span>
-      <span class="nav-label">Challenge</span>
-    </a>
-
-    <a class="nav-item" href="#process">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-        </svg>
-      </span>
-      <span class="nav-label">Process</span>
-    </a>
-
-    <a class="nav-item" href="#gallery">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <polyline points="21 15 16 10 5 21" />
-        </svg>
-      </span>
-      <span class="nav-label">Gallery</span>
-    </a>
-
-    <a class="nav-item" href="#outcome">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 19l6-6 4 4 6-8" />
-          <path d="M4 13v6h6" />
-        </svg>
-      </span>
-      <span class="nav-label">Outcome</span>
-    </a>
-
-    <a class="nav-item" href="#contact">
-      <span class="nav-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-          <polyline points="22,6 12,13 2,6" />
-        </svg>
-      </span>
-      <span class="nav-label">Contact</span>
-    </a>
-
-    <div class="nav-spacer"></div>
-
-    <div class="nav-status">
-      <div class="status-dot"></div>
-      <div class="status-text">Available<br>Sep 2026</div>
-    </div>
-  </nav>
-
-  <main id="main" class="visible">
-
-    <!-- ═══════════════════════════════════════════════════════
-         OVERVIEW / HERO
-         ─ Added: cpu-showcase full-width image BELOW the grid
-         ═══════════════════════════════════════════════════════ -->
-    <section id="overview" class="section hero reveal visible" aria-label="Project overview">
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="container hero-content">
-        <div class="grid two">
-          <div class="hero-text">
-            <div class="section-label">Project // CPU Project</div>
-            <h1 class="hero-title">
-              8-Bit <span class="accent">Sequential Processor</span>
-            </h1>
-            <p class="hero-subtitle">
-              A Unique Simulated Processing Unit, Presented Calculating Fibonacci.<br />
-              Built from just wires, pegs and gates in Logic World.
-            </p>
-            <p class="hero-summary">
-              This project is a custom-built 8-bit computational system designed entirely from first principles (literal
-              wires and gates). It demonstrates how arithmetic, memory, control logic, and clocking interact to execute
-              a program at the bit level.
-            </p>
-            <div class="hero-cta">
-              <a class="btn" href="index.html#projects">Back to projects</a>
-              <a class="btn btn-ghost" href="#process">Read more</a>
-            </div>
-            <div class="hero-links" aria-label="Project links">
-              <a class="link" href="#gallery">Gallery</a>
-              <a class="link" href="#outcome">Outcome</a>
-              <a class="link" href="#contact">Contact</a>
-            </div>
-          </div>
-
-          <aside class="panel classified">
-            <h3>Project Metadata</h3>
-            <p class="muted">
-              A custom 8-bit processor built entirely from first principles inside Logic World.
-            </p>
-            <div class="grid two compact">
-              <div>
-                <h4 class="mini-head">Role</h4>
-                <p>Architecture, Design & Implementation</p>
-              </div>
-              <div>
-                <h4 class="mini-head">Duration</h4>
-                <p>Ongoing Personal Project</p>
-              </div>
-              <div>
-                <h4 class="mini-head">Environment</h4>
-                <p>Logic World</p>
-              </div>
-              <div>
-                <h4 class="mini-head">Status</h4>
-                <p>v1 Complete · v2 In Development</p>
-              </div>
-            </div>
-            <div style="margin-top: 16px;">
-              <span class="tag">Computer Architecture</span>
-              <span class="tag">Digital Logic</span>
-              <span class="tag">Assembly</span>
-              <span class="tag">Systems Design</span>
-            </div>
-            <div class="project-scanline"></div>
-          </aside>
-        </div>
-
-        <figure class="cpu-showcase" aria-label="Full CPU build overview">
-          <img
-            src="TopView.gif"
-            alt="Full view of the 8-bit sequential processor inside Logic World, showing the complete wire and gate layout"
-            loading="eager"
-          />
-          <figcaption>
-            CPU_SIMULATION.v3 // Full Build Overview
-            <span>LOGIC_WORLD · 8-BIT · SEQUENTIAL</span>
-          </figcaption>
-        </figure>
-
-      </div>
-    </section>
-
-    <section id="challenge" class="section alt reveal visible">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">01 // Challenge</div>
-          <h2 class="section-title">Problem statement</h2>
-        </div>
-        <div class="panel">
-          <h3>What the system is</h3>
-          <p>
-            The System currently executes a Fibonacci sequence using a modular hardwired instruction chain.
-            Every component — from logic gates to execution control — was designed and implemented manually, without any
-            external references or templates.
-            <br><br>
-            Version 1 (v1) is fully functional and stable.<br><br>
-            Version 2 (v2) is under development and introduces a true instruction pipeline, indirect memory addressing,
-            branching, and advanced ALU functionality.
-          </p>
-          <p>
-            This was all implemented inside of Logic World, a sandbox game where you can build mechanical and digital
-            systems using wires, gates, and other components.
-          </p>
-          <div class="project-scanline"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal visible">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">02 // Motivation</div>
-          <h2 class="section-title">Why I built it</h2>
-        </div>
-
-        <div class="panel">
-          <p>
-            I wanted to understand how computers actually work underneath abstraction layers.
-            Not just how to write code for a processor, but how the processor itself executes instructions,
-            stores state, moves data, and synchronises operations.
-          </p>
-
-          <p>
-            Building a CPU from individual logic components forces you to think differently.
-            There is no compiler, framework, or operating system to hide mistakes.
-            Every signal transition, memory operation, and timing issue has to be designed intentionally.
-          </p>
-
-          <p>
-            The project started as a small experiment with binary addition and quickly evolved into a complete
-            sequential processor with memory, registers, control logic, and a functioning execution cycle.
-          </p>
-
-          <blockquote class="quote">
-            <p>
-              "At some point, I realised I had accidentally started building an actual computer."
-            </p>
-          </blockquote>
-
-          <div class="project-scanline"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════
-         PROCESS
-         ─ Added: architecture diagram image above the spec grid
-         ═══════════════════════════════════════════════════════ -->
-    <section id="process" class="section reveal visible">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">02 // Process</div>
-          <h2 class="section-title">System Specification (v1)</h2>
-        </div>
-
-        <figure class="arch-figure" style="margin-bottom: 32px;" aria-label="v1 architecture diagram">
-          <img
-            src="Sketches.jpg"
-            alt="Block diagram showing the v1 CPU architecture: ALU, MDR, ACC, CU, RAM, BUS and clock connections"
-            loading="lazy"
-          />
-          <figcaption>FIG 1 — pre-v1 System Architecture · Von Neumann · Fibonacci Sequence Planning</figcaption>
-        </figure>
-
-        <div class="grid three">
-          <article class="panel classified">
-            <h3>Architecture</h3>
-            <p>PROCESSOR_TYPE: Sequential Hardwired Computation</p>
-            <p>DATA_WIDTH: 8-bit</p>
-            <p>ADDRESS_WIDTH: 4-bit (16 bytes of memory)</p>
-            <p>BUS_ARCHITECTURE: Von Neumann (Single Shared instruction/data bus)</p>
-            <p>EXECUTION_MODE: Ripple-Controlled sequential execution</p>
-            <p>CLOCK_SYSTEM: Automatic with manual step override</p>
-            <p>ENVIRONMENT: Logic World</p>
-            <div class="project-scanline"></div>
-          </article>
-
-          <article class="panel classified">
-            <h3>Memory</h3>
-            <p>ADDRESSIBLE_RANGE: 16 Addresses</p>
-            <p>IMPLEMENTED_MEMORY(V1): 8 Bytes</p>
-            <p>MEMORY_TYPE: R/W RAM</p>
-            <p>ACCESS_METHOD: Direct Addressing</p>
-            <div class="project-scanline"></div>
-          </article>
-
-          <article class="panel classified">
-            <h3>Control</h3>
-            <p>MDR: Operational</p>
-            <p>ACC: Operational</p>
-            <p>ALU: Operational - supports ADD</p>
-            <p>CU: Operational - hardwired sequential control logic</p>
-            <p>CLK: Operational, automatic with manual override</p>
-            <p>BUS: Operational</p>
-            <p>INPUT/OUTPUT: Output - Lightboard bit register visualisation</p>
-            <p>FLAGS: Overflow flag implemented</p>
-            <p>PIPELINE: NONE</p>
-            <p>BRANCHING: NONE</p>
-            <p>INDIRECT_ADDRESSING: NONE</p>
-            <p>PC: NONE</p>
-            <p>IR: NONE</p>
-            <p>INTERRUPTS: NONE</p>
-            <div class="project-scanline"></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════════════════════════════════════════════
-         GALLERY
-         ─ Added: card-media figure at top of each project-card
-         ═══════════════════════════════════════════════════════ -->
-    <section id="gallery" class="section alt reveal visible">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">03 // Media</div>
-          <h2 class="section-title">Gallery</h2>
-        </div>
-
-        <div class="projects-grid">
-
-          <!-- ── CARD 1: ALU ──────────────────────────────────────
-               Replace src with a close-up of the ALU subsystem.
-               Good shot: full 8-bit adder chain with carry visible.
-               ─────────────────────────────────────────────────── -->
-          <article class="project-card classified">
-            <figure class="card-media">
-              <img
-                src="ALU.png"
-                alt="Close-up of the 8-bit ALU in Logic World showing the full adder chain and carry propagation logic"
-                loading="lazy"
-              />
-              <span class="img-stamp">ALU · v1</span>
-            </figure>
-
-            <h3>ALU Design</h3>
-            <span class="tag">Arithmetic Logic</span>
-            <span class="tag">8-bit Addition</span>
-
-            <p>
-              The ALU was one of the first major subsystems implemented.
-              It currently supports addition operations using chained carry logic across the full 8-bit width.
-            </p>
-
-            <p>
-              Early versions regularly failed due to incorrect carry propagation,
-              which made debugging surprisingly difficult because a single incorrect bit could corrupt the entire
-              result.
-            </p>
-
-            <div class="project-scanline"></div>
-          </article>
-
-          <!-- ── CARD 2: RAM ──────────────────────────────────────
-               Replace src with a shot of the RAM/register bank.
-               Good shot: LED output registers lit up with live data.
-               ─────────────────────────────────────────────────── -->
-          <article class="project-card classified">
-            <figure class="card-media">
-              <img
-                src="Register.png"
-                alt="RAM and register bank in Logic World with LED output display showing stored 8-bit values"
-                loading="lazy"
-              />
-              <span class="img-stamp">RAM · 8B</span>
-            </figure>
-
-            <h3>RAM and Registers</h3>
-            <span class="tag">Memory</span>
-            <span class="tag">8-bit Storage</span>
-
-            <p>
-              The RAM and registers were designed to provide fast access to frequently used data.
-              They support direct addressing and are implemented as R/W RAM with a capacity of 8 bytes (12 addressable
-              memory locations in v1, increasing to 1028 in v2).
-              Specially designed registers such as ripples, W or R only memory locations, and output registers hooked
-              up to LEDs were implemented.
-            </p>
-
-            <p>
-              All buses were bi-directional, so tracing an incorrect signal required checking every
-              connected component for potential faults.
-            </p>
-
-            <div class="project-scanline"></div>
-          </article>
-
-          <!-- ── CARD 3: FIBONACCI ───────────────────────────────
-               Replace src with the Fibonacci output in action.
-               Best shot: LED lightboard mid-sequence showing a
-               Fibonacci number in binary — ideally a distinctive one
-               like 0b00010001 (17) or 0b00101101 (45).
-               ─────────────────────────────────────────────────── -->
-          <article class="project-card classified">
-            <figure class="card-media">
-              <img
-                src="Fibonacci.png"
-                alt="LED output lightboard displaying a Fibonacci number in binary during live execution of the program"
-                loading="lazy"
-              />
-              <span class="img-stamp">EXEC · FIB</span>
-            </figure>
-
-            <h3>Fibonacci Execution</h3>
-            <span class="tag">Bit-Level Programming</span>
-            <span class="tag">Custom Microcode</span>
-
-            <p>
-              The Fibonacci sequence was chosen as a demonstration program because it requires both arithmetic and
-              memory operations, making it a good test of the system's capabilities.
-              The program is implemented as a hardwired sequence of control signals that manipulate the ALU, registers,
-              and memory to calculate Fibonacci numbers iteratively.
-            </p>
-
-            <p>
-              The initial program was actually designed using pen and paper, following messy hand drawn schematics and a
-              myriad of unorganised carry bits to ensure that each step was correct.
-            </p>
-
-            <div class="project-scanline"></div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="outcome" class="section reveal visible">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">04 // Outcome</div>
-          <h2 class="section-title">Results</h2>
-        </div>
-
-        <div class="grid two">
-          <div class="panel">
-            <h3>What the project demonstrated</h3>
-
-            <p>
-              This project massively improved my understanding of computer architecture and low-level system design.
-              Concepts that normally feel abstract — such as registers, buses, clock cycles, instruction execution —
-              began to actually feel intuitive and tangible after designing them from the ground up.
-              This demistified a lot of the complex ideas and turned them into practical engineering problems.
-            </p>
-
-            <p>
-              It also changed how I think about software.
-              Building even simple functionality at the hardware level gives a much better appreciation for abstraction,
-              efficiency, and system constraints.
-            </p>
-
-            <ul class="bullets" role="list">
-              <li>Designed and implemented a working sequential processor architecture.</li>
-              <li>Built modular memory, ALU, and control subsystems from logic components.</li>
-              <li>Executed real computational programs including Fibonacci generation.</li>
-              <li>Developed debugging and testing strategies for low-level logic systems.</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <h3>Next steps</h3>
-
-            <p>
-              The project is ongoing and will continue to evolve with new features and improvements.
-              The next major milestone is completing v2, which will introduce a true instruction pipeline,
-              indirect memory addressing, branching logic, and an expanded instruction set that includes sub, cmp, and halt.
-            </p>
-
-            <p>
-              Beyond that, I want to explore more complex architectures such as RISC or CISC designs,
-              implement a simple operating system on top of the hardware, and potentially design a custom instruction
-              set architecture (ISA) for more advanced programming capabilities.
-            </p>
-
-            <div class="project-scanline"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section alt reveal visible">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">05 // Next</div>
-          <h2 class="section-title">More detail</h2>
-        </div>
-
-        <div class="grid two">
-          <div class="panel">
-            <h3>Links</h3>
-            <div class="contact-list">
-              <a class="contact-item" href="index.html#projects">
-                <span class="contact-label">Projects</span>
-                <span class="contact-value">Return</span>
-              </a>
-              <a class="contact-item" href="index.html#contact">
-                <span class="contact-label">Contact</span>
-                <span class="contact-value">Reach out</span>
-              </a>
-              <a class="contact-item" href="#">
-                <span class="contact-label">Document</span>
-                <span class="contact-value">Placeholder</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="panel">
-            <h3>Notes</h3>
-            <form class="form" action="#" method="post">
-              <label>
-                <span class="label">Name</span>
-                <input type="text" name="name" placeholder="What is your name?" required />
-              </label>
-              <label>
-                <span class="label">Email</span>
-                <input type="email" name="email" placeholder="How can I contact you?" required />
-              </label>
-              <label>
-                <span class="label">Message</span>
-                <textarea name="message" rows="4" placeholder="What would you like to say?" required></textarea>
-              </label>
-              <button class="btn" type="submit">Send Message</button>
-            </form>
-            <div class="project-scanline"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="muted">© 2026 Kieran Gledhill. System Online.</p>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#projects">Projects</a>
-        <a href="#overview">Back to top</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // ── CURSOR SCRIPT (Desktop Only) ────────────────────────
-    const cursor = document.getElementById('cursor');
-    const ring = document.getElementById('cursor-ring');
-
-    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-      let mx = -100, my = -100, rx = -100, ry = -100;
-      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-      (function animCursor() {
-        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-        rx += (mx - rx) * 0.14; ry += (my - ry) * 0.14;
-        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-        requestAnimationFrame(animCursor);
-      })();
-    } else {
-      cursor.style.display = 'none';
-      ring.style.display = 'none';
-    }
-
-    // ── BOOT SEQUENCE ────────────────────────────────────────
-    const bootEl = document.getElementById('boot-lines');
-    const bootScreen = document.getElementById('boot');
-    const content = document.getElementById('main');
-
-    const lines = [
-      { text: 'Gledhill Systems >>> CPU_SIMULATION.v3', cls: 'dim', delay: 0 },
-      { text: 'Initialising execution environment...', cls: '', delay: 180 },
-      { text: 'Loading instruction set: CUSTOM ISA [OK]', cls: '', delay: 380 },
-      { text: 'Mounting architecture: LOGIC_WORLD_BUILD', cls: '', delay: 580 },
-      { text: 'Verifying clock cycle stability...', cls: '', delay: 780 },
-      { text: 'CACHE: 16KB SIMULATION BUFFER  [SYNCED]', cls: '', delay: 980 },
-      { text: '', cls: '', delay: 1100 },
-      { text: 'User authentication: KIERAN_GLEDHILL  [INVALID]', cls: 'err', delay: 1250 },
-      { text: 'NEW USER DETECTED >>>  Permission level: USER.SANDBOX', cls: '', delay: 2450 },
-      { text: '', cls: '', delay: 2600 },
-      { text: 'Compiling micro-operations...', cls: '', delay: 2750 },
-      { text: 'Pipeline status: STABLE', cls: '', delay: 2950 },
-      { text: 'Branch prediction unit: ONLINE', cls: '', delay: 3150 },
-      { text: '', cls: '', delay: 3300 },
-      { text: '>>> entering CPU_SIMULATION.v3 workspace...', cls: 'acc', delay: 3500 },
-    ];
-
-    let done = 0;
-    lines.forEach(line => {
-      setTimeout(() => {
-        const d = document.createElement('div');
-        d.className = line.cls;
-        d.textContent = line.text;
-        bootEl.appendChild(d);
-        done++;
-        if (done === lines.length) {
-          setTimeout(() => {
-            bootScreen.classList.add('fade-out');
-            content.classList.add('visible');
-            setTimeout(() => bootScreen.style.display = 'none', 700);
-            reveals.forEach(r => {
-              if (r.getBoundingClientRect().top < window.innerHeight) {
-                r.classList.add('visible');
-              }
-            });
-          }, 600);
-        }
-      }, line.delay);
-    });
-
-    // ── ACTIVE NAV USING INTERSECTION OBSERVER ───────────
-    const navItems = document.querySelectorAll('.nav-item');
-    const linkedSections = Array.from(navItems)
-      .map(item => document.querySelector(item.getAttribute('href')))
-      .filter(el => el !== null);
-
-    const navObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navItems.forEach(link => link.classList.remove('active'));
-            const activeLink = document.querySelector(`.nav-item[href="#${id}"]`);
-            if (activeLink) activeLink.classList.add('active');
-          }
-        });
-      },
-      { root: null, threshold: 0.6 }
-    );
-
-    linkedSections.forEach(section => navObserver.observe(section));
-
-    // ── SCROLL REVEAL ────────────────────────────────────────
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(r => io.observe(r));
-  </script>
-</body>
-
-</html>
+</footer>
+<script src="js/site.js" defer></script>
+    </body>
+    </html>

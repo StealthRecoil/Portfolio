@@ -89,3 +89,15 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.65rem;
   opacity: 0.5;
 }
+/* Accessibility & release polish */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+strong { color: var(--text); }

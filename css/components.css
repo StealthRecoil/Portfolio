@@ -90,7 +90,8 @@
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s, transform 0.3s;
-  display:block;
+  display:flex;
+  flex-direction: column;
 }
 .project-card:hover { 
   border-color: rgba(0, 229, 255, 0.3); 
@@ -277,4 +278,19 @@ textarea { resize: vertical; }
   .hero-bg-full img {
     object-position: center center;
   }
+}
+.project-card-static { cursor: default; }
+.project-card-static:hover {
+  transform: none;
+  border-color: var(--border);
+}
+.project-card-static .project-scanline { display: none; }
+
+.sidebar-logo { text-decoration: none; }
+
+.contact-item:focus-visible,
+.btn:focus-visible,
+.link:focus-visible,
+.nav-item:focus-visible {
+  outline-offset: -2px;
 }

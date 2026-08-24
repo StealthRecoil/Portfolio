@@ -118,9 +118,10 @@
 #main {
   margin-left: var(--sidebar);
   transition: margin-left 0.32s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0; /* Handled by boot script */
+  opacity: 1;
 }
-#main.visible { opacity: 1; }
+.js #main { opacity: 0; }
+.js #main.visible { opacity: 1; }
 
 .container {
   width: min(var(--container), calc(100% - 40px));
